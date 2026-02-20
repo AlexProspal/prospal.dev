@@ -17,25 +17,42 @@
 body{
   margin:0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #18213f 0, #050814 55%, #000 100%);
+  background-color:#050814; /* fallback */
+  background-image: radial-gradient(circle at top, #18213f 0, #050814 55%, #000 100%);
   color:var(--text);
 }
 
 a{ color:var(--accent-strong); text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
+/* Fallback first, then modern min() when available */
 .container{
-  width:min(var(--max), calc(100% - 2.2rem));
+  max-width: var(--max);
+  width: calc(100% - 2.2rem);
   margin:0 auto;
+}
+@supports (width: min(1px, 2px)) {
+  .container{
+    width: min(var(--max), calc(100% - 2.2rem));
+    max-width: none;
+  }
 }
 
 header.topbar{
-  position:sticky;
+  position: sticky;
   top:0;
   z-index:50;
-  background:rgba(8,12,26,0.72);
-  backdrop-filter: blur(10px);
+  background: rgba(8,12,26,0.92); /* fallback if blur unsupported */
   border-bottom:1px solid rgba(255,255,255,0.06);
+}
+
+/* Backdrop blur (Safari needs -webkit-) with clean fallback above */
+@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  header.topbar{
+    background: rgba(8,12,26,0.72);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
 }
 
 .topbar-inner{
@@ -56,9 +73,15 @@ header.topbar{
 .pill{
   width:28px; height:28px;
   border-radius:999px;
-  background: conic-gradient(from 210deg, #ff9f1c, #ffbf69, #cbf3f0, #2ec4b6, #ff9f1c);
+  background:#ff9f1c; /* fallback if conic-gradient unsupported */
   box-shadow:0 10px 30px rgba(255,159,28,0.25);
 }
+@supports (background: conic-gradient(from 0deg, red, blue)) {
+  .pill{
+    background: conic-gradient(from 210deg, #ff9f1c, #ffbf69, #cbf3f0, #2ec4b6, #ff9f1c);
+  }
+}
+
 .brand-title{ font-weight:650; letter-spacing:.02em; }
 .brand-sub{ font-size:.78rem; color:var(--muted); margin-top:.12rem; }
 
@@ -113,9 +136,12 @@ header.topbar{
   text-decoration:none;
   gap:.4rem;
   white-space:nowrap;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .btn-primary{
+  background:#ff9f1c; /* fallback */
   background:linear-gradient(135deg, var(--accent-strong), #ffbf69);
   color:#1b1204;
   box-shadow:0 10px 30px rgba(255,159,28,0.35);
@@ -158,7 +184,8 @@ main{
 .hero-card::before{
   content:"";
   position:absolute;
-  inset:-80px -80px auto auto;
+  top:-80px;
+  right:-80px;
   width:220px;
   height:220px;
   background: radial-gradient(circle at center, rgba(255,159,28,0.35), transparent 60%);

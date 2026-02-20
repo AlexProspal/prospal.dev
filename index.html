@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <!-- Helps older/embedded browsers choose the best rendering mode -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Portfolio Template — Overview</title>
+
   <link rel="stylesheet" href="styles.css" />
+  <!-- Defer so parsing is stable across browsers; also keeps JS off the bottom -->
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -46,7 +51,8 @@
           <div class="hero-actions">
             <a class="btn btn-primary" href="projects.html">View project list</a>
             <a class="btn btn-ghost" href="skills.html">See skills layout</a>
-            <button class="btn btn-ghost" type="button" onclick="flash('Template loaded.')">Test flash</button>
+            <!-- No inline onclick: works better with stricter CSPs and some embedded browsers -->
+            <button class="btn btn-ghost" type="button" id="flashBtn">Test flash</button>
           </div>
 
           <div class="flash" id="flash" role="status" aria-live="polite" hidden>
@@ -137,7 +143,5 @@
       <footer>Template only — replace placeholders when ready.</footer>
     </div>
   </main>
-
-  <script src="script.js"></script>
 </body>
 </html>
