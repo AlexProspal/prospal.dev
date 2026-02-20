@@ -3,260 +3,453 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alexander Prospal</title>
-  <meta name="description" content="Alexander Prospal — personal site" />
+  <title>Personal Website</title>
+  <meta name="description" content="A clean, professional personal website with projects, writing, and contact." />
+  <meta name="theme-color" content="#0b1020" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Optional: Open Graph -->
+  <meta property="og:title" content="Personal Website" />
+  <meta property="og:description" content="Projects, writing, and contact — clean, modern, deploy-ready." />
+  <!-- <meta property="og:image" content="assets/og.png" /> -->
 </head>
 
 <body>
-  <main class="main">
+  <a class="skip" href="#content">Skip to content</a>
 
-    <!-- Header (matches your page-header vibe) -->
-    <div class="page-header">
-      <div>
-        <h1>Alexander Prospal</h1>
-        <p class="page-subtitle">
-          B.S. Computer Science • B.A. Economics (Quantitative Methods) • AI Minor • Cleveland, OH
-        </p>
-      </div>
+  <!-- Top nav -->
+  <header class="top">
+    <div class="top-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Portfolio</span>
+      </a>
 
-      <div class="btn-row" style="margin-bottom:0;">
-        <a class="btn btn-primary" href="#projects">Featured Projects</a>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
-      </div>
+      <nav class="nav" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
+        <a href="#toolbox">Toolbox</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="nav-btn" id="navBtn" type="button" aria-expanded="false" aria-controls="mobileNav">
+        Menu
+      </button>
     </div>
 
-    <!-- Quick Actions (same structure as your Overview card) -->
-    <section class="card" style="margin-bottom:1.25rem;">
-      <h2 class="card-title">Quick Actions</h2>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">
-          View GitHub
-        </a>
-        <button class="btn btn-ghost" id="copyEmailBtn" type="button">Copy Email</button>
-        <a class="btn btn-ghost" href="#about">About Me</a>
-      </div>
+    <div class="mobile" id="mobileNav" hidden>
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="#toolbox">Toolbox</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
 
-      <div class="chip-row">
-        <span class="chip">Java</span>
-        <span class="chip">Python</span>
-        <span class="chip">SQL</span>
-        <span class="chip">R</span>
-        <span class="chip">Databases</span>
-        <span class="chip">Algorithms</span>
-      </div>
-    </section>
+  <main id="content" class="wrap">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="kicker">
+          <span class="pill">Available for internships</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span class="kicker-muted">Cleveland, OH</span>
+        </div>
 
-    <!-- Main navigation cards (same “two cards in a grid” feel) -->
-    <section class="grid-2" style="margin-bottom:1.25rem;">
-      <div class="card pad-tight">
-        <div class="eyebrow">Profile</div>
-        <div class="card-big">About & Focus</div>
-        <p class="card-desc">
-          What I’m studying, what I’m building, and the kind of work I like doing.
+        <h1 class="headline">
+          A professional, modern site that feels like a real product —
+          <span class="grad">not a resume dump</span>.
+        </h1>
+
+        <p class="lead">
+          This template is built around “cards”: quick scanning, clear hierarchy,
+          and sections that look finished. Swap in your real content later without redesigning.
         </p>
-        <div class="btn-row" style="margin-bottom:0;">
-          <a class="btn btn-ghost" href="#about">About</a>
-          <a class="btn btn-ghost" href="#skills">Skills</a>
+
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+          <button class="btn subtle" id="copyEmail" type="button">Copy email</button>
+        </div>
+
+        <div class="chips" aria-label="Highlights">
+          <span class="chip">Systems</span>
+          <span class="chip">Databases</span>
+          <span class="chip">Software Engineering</span>
+          <span class="chip">Data</span>
+          <span class="chip">AI / ML</span>
         </div>
       </div>
 
-      <div class="card pad-tight">
-        <div class="eyebrow">Work</div>
-        <div class="card-big">Projects & Proof</div>
-        <p class="card-desc">
-          Selected projects with practical deliverables: schemas, queries, and usable tools.
+      <div class="hero-right">
+        <div class="card hero-card">
+          <div class="hero-card-top">
+            <div class="orb" aria-hidden="true"></div>
+            <div>
+              <div class="muted tiny">Now building</div>
+              <div class="big">Useful tools with clean data models</div>
+            </div>
+          </div>
+
+          <div class="mini-grid">
+            <div class="mini">
+              <div class="muted tiny">Focus</div>
+              <div class="mini-val">Reliable features</div>
+            </div>
+            <div class="mini">
+              <div class="muted tiny">Style</div>
+              <div class="mini-val">Fast + tidy</div>
+            </div>
+            <div class="mini">
+              <div class="muted tiny">Output</div>
+              <div class="mini-val">Docs + demos</div>
+            </div>
+            <div class="mini">
+              <div class="muted tiny">Stack</div>
+              <div class="mini-val">Java • Python • SQL</div>
+            </div>
+          </div>
+
+          <div class="badges">
+            <span class="badge">Shipping mindset</span>
+            <span class="badge">Strong structure</span>
+            <span class="badge">Readable UX</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK STATS -->
+    <section class="stats" aria-label="Quick stats">
+      <div class="stat card">
+        <div class="muted tiny">Current</div>
+        <div class="stat-big">Student</div>
+        <div class="muted">CS + Econ (QM) • AI minor</div>
+      </div>
+      <div class="stat card">
+        <div class="muted tiny">Strength</div>
+        <div class="stat-big">Systems</div>
+        <div class="muted">Schemas, constraints, workflows</div>
+      </div>
+      <div class="stat card">
+        <div class="muted tiny">Workflow</div>
+        <div class="stat-big">End-to-end</div>
+        <div class="muted">Design → build → document</div>
+      </div>
+      <div class="stat card">
+        <div class="muted tiny">Preference</div>
+        <div class="stat-big">Clarity</div>
+        <div class="muted">Readable, testable, consistent</div>
+      </div>
+    </section>
+
+    <!-- MAIN GRID: lots of rounded boxes -->
+    <section class="grid" id="work">
+      <article class="card span2">
+        <div class="card-head">
+          <h2>What I do</h2>
+          <span class="muted tiny">Overview</span>
+        </div>
+
+        <p class="muted">
+          I build practical software: database-backed apps, tooling, and clean interfaces.
+          My default is “production-ish”: constraints, edge cases, clear docs, and consistent structure.
         </p>
-        <div class="btn-row" style="margin-bottom:0;">
-          <a class="btn btn-ghost" href="#projects">Projects</a>
-          <a class="btn btn-ghost" href="#education">Education</a>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <div class="feature-title">Data modeling</div>
+            <div class="muted">Normalized schemas, constraints, query design.</div>
+          </div>
+          <div class="feature">
+            <div class="feature-title">Software engineering</div>
+            <div class="muted">Clean architecture, readable code, good defaults.</div>
+          </div>
+          <div class="feature">
+            <div class="feature-title">Delivery</div>
+            <div class="muted">Documentation, demos, and “works on my machine” → “works”.</div>
+          </div>
+          <div class="feature">
+            <div class="feature-title">Collaboration</div>
+            <div class="muted">Clear comms, strong organization, dependable follow-through.</div>
+          </div>
         </div>
-      </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Currently</h2>
+          <span class="muted tiny">Now</span>
+        </div>
+
+        <ul class="list">
+          <li>Building projects that emphasize correctness & usability.</li>
+          <li>Leaning into databases + systems work.</li>
+          <li>Keeping a “shipping log” of improvements and lessons learned.</li>
+        </ul>
+
+        <div class="callout">
+          <div class="callout-title">North star</div>
+          <div class="muted">Make things people can actually use, with data that doesn’t lie.</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <h2>Highlights</h2>
+          <span class="muted tiny">Signal</span>
+        </div>
+
+        <div class="mini-stack">
+          <div class="mini-line">
+            <span class="dot2" aria-hidden="true"></span>
+            <span><strong>Structure-first</strong> design (schemas, invariants).</span>
+          </div>
+          <div class="mini-line">
+            <span class="dot2" aria-hidden="true"></span>
+            <span><strong>Readable</strong> implementation (future-proof). </span>
+          </div>
+          <div class="mini-line">
+            <span class="dot2" aria-hidden="true"></span>
+            <span><strong>Polished</strong> outputs (docs, examples, demos).</span>
+          </div>
+        </div>
+
+        <div class="actions tight">
+          <a class="btn ghost" href="#toolbox">Toolbox</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </article>
     </section>
 
-    <!-- About (card styling preserved) -->
-    <section class="card section" id="about">
-      <div class="section-head">
-        <h2 class="card-title">About</h2>
-        <span class="muted">Personal</span>
-      </div>
-
-      <p class="muted" style="margin-top:0;">
-        I’m a Computer Science + Economics (Quantitative Methods) student with an AI minor.
-        I like building systems that feel “finished”: clean data models, strong constraints, and simple interfaces.
-      </p>
-
-      <div class="grid-3">
-        <div class="mini-card">
-          <div class="mini-title">What I’m good at</div>
-          <div class="mini-text">Structured thinking, correctness, documentation, and edge cases.</div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-title">What I build</div>
-          <div class="mini-text">Database-backed tools, query-heavy apps, and practical coursework systems.</div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-title">What I want next</div>
-          <div class="mini-text">Internships where I can ship real features and learn from strong engineers.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education (same table/card vibe, but more “website”) -->
-    <section class="card section" id="education">
-      <div class="section-head">
-        <h2 class="card-title">Education</h2>
-        <span class="muted">Academic</span>
-      </div>
-
-      <div class="split">
-        <div>
-          <div class="row">
-            <div class="where">Case Western Reserve University</div>
-            <div class="when">Expected 2028</div>
-          </div>
-          <div class="muted">Cleveland, OH</div>
-          <div class="bullets">
-            <div>• B.S. Computer Science</div>
-            <div>• B.A. Economics (Quantitative Methods)</div>
-            <div>• Minor: Artificial Intelligence</div>
-          </div>
-        </div>
-
-        <div>
-          <div class="row">
-            <div class="where">Campus International High School</div>
-            <div class="when">2024</div>
-          </div>
-          <div class="muted">Cleveland, OH</div>
-          <div class="bullets">
-            <div>• Honors Diploma</div>
-            <div>• Weighted GPA: 4.59</div>
-            <div>• Rank: 1 of 54</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="eyebrow" style="margin-top:0;">Relevant Coursework</div>
-      <div class="chip-row">
-        <span class="chip">Algorithms</span>
-        <span class="chip">Data Structures</span>
-        <span class="chip">Database Systems</span>
-        <span class="chip">Machine Learning</span>
-        <span class="chip">Statistics</span>
-        <span class="chip">Linear Algebra</span>
-        <span class="chip">Computer Security</span>
-      </div>
-    </section>
-
-    <!-- Projects (several rounded boxes) -->
+    <!-- PROJECTS -->
     <section class="section" id="projects">
-      <div class="page-header" style="margin-bottom:1rem;">
-        <div>
-          <h1 style="font-size:1.35rem;">Projects</h1>
-          <p class="page-subtitle">Selected work, formatted like your original cards.</p>
-        </div>
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p class="muted">Two-column project cards with tags, outcomes, and actions.</p>
       </div>
 
-      <div class="grid-2">
-        <article class="card pad-tight">
-          <div class="eyebrow">Featured</div>
-          <div class="card-big">Theater Inventory Database System</div>
-          <p class="card-desc">
-            Relational schema + complex queries + CLI tool for realistic inventory workflows.
-          </p>
-
-          <div class="chip-row">
-            <span class="chip">SQL</span>
-            <span class="chip">Schema</span>
-            <span class="chip">Joins</span>
-            <span class="chip">Python</span>
-            <span class="chip">CLI</span>
+      <div class="proj-grid">
+        <article class="card project">
+          <div class="project-top">
+            <div>
+              <div class="project-title">Inventory DB System</div>
+              <div class="muted">Relational schema • queries • CLI tool</div>
+            </div>
+            <span class="pill2">Featured</span>
           </div>
 
-          <div class="btn-row" style="margin-bottom:0;margin-top:.9rem;">
-            <a class="btn btn-primary" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">
-              GitHub
-            </a>
-            <a class="btn btn-ghost" href="#contact">Request details</a>
+          <ul class="list">
+            <li>Designed normalized tables with PK/FK constraints.</li>
+            <li>Wrote join-heavy queries for realistic workflows.</li>
+            <li>Built a simple interface to run parameterized queries.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">SQL</span><span class="chip">Schema</span><span class="chip">Joins</span>
+            <span class="chip">Python</span><span class="chip">CLI</span>
+          </div>
+
+          <div class="actions tight">
+            <a class="btn primary small" href="#" aria-disabled="true" onclick="return false;">Live demo</a>
+            <a class="btn ghost small" href="#" aria-disabled="true" onclick="return false;">Case study</a>
           </div>
         </article>
 
-        <article class="card pad-tight">
-          <div class="eyebrow">Ongoing</div>
-          <div class="card-big">Coursework Systems & Data Projects</div>
-          <p class="card-desc">
-            Java/Python/R projects with emphasis on correctness, structure, and clear deliverables.
-          </p>
-
-          <div class="chip-row">
-            <span class="chip">Java</span>
-            <span class="chip">Python</span>
-            <span class="chip">R</span>
-            <span class="chip">Algorithms</span>
-            <span class="chip">Data</span>
+        <article class="card project">
+          <div class="project-top">
+            <div>
+              <div class="project-title">Decision / Expert Tool</div>
+              <div class="muted">Structured logic • file persistence • clean UX</div>
+            </div>
+            <span class="pill2">Build</span>
           </div>
 
-          <div class="btn-row" style="margin-bottom:0;margin-top:.9rem;">
-            <a class="btn btn-ghost" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">
-              Browse repos
-            </a>
+          <ul class="list">
+            <li>Encodes decisions with a simple, testable structure.</li>
+            <li>Focuses on clarity: users understand the “why”.</li>
+            <li>Built to extend without rewrites.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Java</span><span class="chip">Data structures</span><span class="chip">IO</span>
+            <span class="chip">Testing</span>
+          </div>
+
+          <div class="actions tight">
+            <a class="btn ghost small" href="#" aria-disabled="true" onclick="return false;">Write-up</a>
+            <a class="btn ghost small" href="#" aria-disabled="true" onclick="return false;">Source</a>
+          </div>
+        </article>
+
+        <article class="card project span2">
+          <div class="project-top">
+            <div>
+              <div class="project-title">Coursework Systems & Data</div>
+              <div class="muted">A structured “portfolio lane” for smaller builds</div>
+            </div>
+            <span class="pill2">Ongoing</span>
+          </div>
+
+          <div class="two">
+            <div>
+              <div class="muted tiny">What goes here</div>
+              <ul class="list">
+                <li>Small apps with clean docs and screenshots</li>
+                <li>Query notebooks & small analyses</li>
+                <li>Architecture notes / diagrams</li>
+              </ul>
+            </div>
+            <div>
+              <div class="muted tiny">Why it works</div>
+              <ul class="list">
+                <li>Shows consistency (not one-off wins)</li>
+                <li>Proves how you think and write</li>
+                <li>Makes your work easy to review</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="chips">
+            <span class="chip">Java</span><span class="chip">Python</span><span class="chip">R</span>
+            <span class="chip">Algorithms</span><span class="chip">Data</span>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="card section" id="skills">
+    <!-- WRITING -->
+    <section class="section" id="writing">
       <div class="section-head">
-        <h2 class="card-title">Skills</h2>
-        <span class="muted">Toolkit</span>
+        <h2>Writing</h2>
+        <p class="muted">A professional site looks complete when it has “thought pieces” and notes.</p>
       </div>
 
-      <div class="grid-3">
-        <div class="mini-card">
-          <div class="mini-title">Programming</div>
-          <div class="chip-row">
+      <div class="write-grid">
+        <article class="card write">
+          <div class="write-top">
+            <div class="write-title">How I design schemas</div>
+            <div class="muted">A repeatable checklist: entities → constraints → queries.</div>
+          </div>
+          <a class="btn ghost small" href="#" aria-disabled="true" onclick="return false;">Read</a>
+        </article>
+
+        <article class="card write">
+          <div class="write-top">
+            <div class="write-title">My “shipping” habits</div>
+            <div class="muted">A short system for progress that compounds.</div>
+          </div>
+          <a class="btn ghost small" href="#" aria-disabled="true" onclick="return false;">Read</a>
+        </article>
+
+        <article class="card write">
+          <div class="write-top">
+            <div class="write-title">Notes on correctness</div>
+            <div class="muted">Edge cases, invariants, and small tests that save you later.</div>
+          </div>
+          <a class="btn ghost small" href="#" aria-disabled="true" onclick="return false;">Read</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- TOOLBOX -->
+    <section class="section" id="toolbox">
+      <div class="section-head">
+        <h2>Toolbox</h2>
+        <p class="muted">Grouped “boxes” make this feel complete and intentional.</p>
+      </div>
+
+      <div class="tool-grid">
+        <article class="card tool">
+          <div class="tool-title">Languages</div>
+          <div class="chips">
             <span class="chip">Java</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span>
           </div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-title">Core CS</div>
-          <div class="chip-row">
+        </article>
+
+        <article class="card tool">
+          <div class="tool-title">Core CS</div>
+          <div class="chips">
             <span class="chip">Data Structures</span><span class="chip">Algorithms</span><span class="chip">Databases</span><span class="chip">ML</span>
           </div>
+        </article>
+
+        <article class="card tool">
+          <div class="tool-title">Math</div>
+          <div class="chips">
+            <span class="chip">Linear Algebra</span><span class="chip">Discrete</span><span class="chip">Stats</span><span class="chip">Calc</span>
+          </div>
+        </article>
+
+        <article class="card tool span2">
+          <div class="tool-title">What I value</div>
+          <div class="two">
+            <div class="soft">
+              <div class="muted tiny">Quality</div>
+              <ul class="list">
+                <li>Constraints and invariants</li>
+                <li>Readable structure</li>
+                <li>Clear docs + examples</li>
+              </ul>
+            </div>
+            <div class="soft">
+              <div class="muted tiny">Execution</div>
+              <ul class="list">
+                <li>Small increments</li>
+                <li>Visible progress</li>
+                <li>Polished deliverables</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="contact card">
+        <div class="contact-left">
+          <h2>Contact</h2>
+          <p class="muted">
+            Want to talk about an internship, a project, or collaboration? Email is best.
+          </p>
+
+          <div class="actions tight">
+            <a class="btn primary" href="mailto:ajp319@case.edu">Email me</a>
+            <a class="btn ghost" href="https://github.com/" target="_blank" rel="noreferrer noopener">GitHub</a>
+            <button class="btn subtle" id="copyEmail2" type="button">Copy email</button>
+          </div>
+
+          <div class="muted tiny" style="margin-top:.65rem;">
+            ajp319@case.edu • (216) 339–1306
+          </div>
         </div>
-        <div class="mini-card">
-          <div class="mini-title">Math</div>
-          <div class="chip-row">
-            <span class="chip">Linear Algebra</span><span class="chip">Discrete Math</span><span class="chip">Calculus</span><span class="chip">Statistics</span>
+
+        <div class="contact-right">
+          <div class="soft">
+            <div class="muted tiny">Tip</div>
+            <div>
+              Add a headshot + 1–2 screenshots of your best project in the projects section
+              and this instantly looks “real.”
+            </div>
+          </div>
+
+          <div class="soft">
+            <div class="muted tiny">Also</div>
+            <div>
+              If you want multiple pages later: keep this as the homepage and add /projects and /writing.
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="card section" id="contact">
-      <div class="section-head">
-        <h2 class="card-title">Contact</h2>
-        <span class="muted">Reach out</span>
+    <footer class="foot">
+      <div class="foot-inner">
+        <span class="muted tiny">© <span id="year"></span> Personal Website</span>
+        <a class="muted tiny" href="#top">Back to top ↑</a>
       </div>
-
-      <p class="muted" style="margin-top:0;">
-        The fastest way to reach me is email. I’m happy to share more project details or code samples.
-      </p>
-
-      <div class="btn-row" style="margin-bottom:0;">
-        <a class="btn btn-primary" href="mailto:ajp319@case.edu">Email me</a>
-        <a class="btn btn-ghost" href="tel:+12163391306">Call</a>
-        <button class="btn btn-ghost" id="copyEmailBtn2" type="button">Copy Email</button>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <span class="muted">© <span id="year"></span> Alexander Prospal</span>
     </footer>
   </main>
 
