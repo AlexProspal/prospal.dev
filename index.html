@@ -1,14 +1,301 @@
+<!doctype html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alex Prospal — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-   <h1>Welcome to my website</h1>
-   <p>My name is Alex, this is my website</p>
-   <p>I don't know web development tho so idk what to do here yet</p>
-   <p>Contact me: <a href="mailto:alexander@prospal.dev">alexander@prospal.dev</a></p>
-   <img src="IMG_1875.jpeg" alt="Jerome">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="pill" aria-hidden="true"></div>
+        <div>
+          <div class="brand-title">Alex Prospal</div>
+          <div class="brand-sub">Software • Data • Systems</div>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Browse</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link active" href="#overview" data-route="overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-route="projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" data-route="skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience" data-route="experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-route="contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Links</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="#" id="resumeLink">Resume (PDF)</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="githubLink">GitHub</a></li>
+          <li class="nav-item"><a class="nav-link" href="#" id="linkedinLink">LinkedIn</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <span class="chip" id="statusChip">Available</span>
+        <span class="chip" id="timeChip">—</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <!-- OVERVIEW -->
+      <section id="overview" class="route route-active" data-route="overview">
+        <div class="page-header">
+          <div>
+            <h1>Overview</h1>
+            <p class="page-subtitle">A quick snapshot of what I build and what I’m exploring right now.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#projects" data-route="projects">View projects</a>
+            <button class="btn btn-ghost" id="copyEmailBtn" type="button">Copy email</button>
+          </div>
+        </div>
+
+        <div class="flash" id="flash" role="status" aria-live="polite" hidden>
+          <span class="badge-dot" aria-hidden="true"></span>
+          <span id="flashText"></span>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="eyebrow">About</div>
+            <div class="card-title">Builder mindset, clean execution.</div>
+            <p class="muted">
+              I like shipping practical tools (web apps, data pipelines, systems-y projects) with
+              readable code and good UX. I’m especially into performance, reliability, and
+              “make it nice to use.”
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-ghost" href="#skills" data-route="skills">Skills</a>
+              <a class="btn btn-ghost" href="#experience" data-route="experience">Experience</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="eyebrow">Now</div>
+            <div class="card-title">Current focus</div>
+
+            <div class="kv">
+              <div class="kv-row">
+                <div class="kv-key">Primary</div>
+                <div class="kv-val">Backend • Databases • Tooling</div>
+              </div>
+              <div class="kv-row">
+                <div class="kv-key">Secondary</div>
+                <div class="kv-val">Data Science • HPC workflows</div>
+              </div>
+              <div class="kv-row">
+                <div class="kv-key">Learning</div>
+                <div class="kv-val">Systems design • Security fundamentals</div>
+              </div>
+            </div>
+
+            <div class="chips">
+              <span class="chip">Flask</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Python</span>
+              <span class="chip">Java</span>
+              <span class="chip">Linux</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1.1rem;">
+          <div class="table-head">
+            <div>
+              <div class="eyebrow">Highlights</div>
+              <div class="card-title" style="margin-bottom:.2rem;">Featured work</div>
+              <p class="muted" style="margin:0;">A few things that represent my style.</p>
+            </div>
+            <a class="btn btn-ghost" href="#projects" data-route="projects">See all</a>
+          </div>
+
+          <div class="table" role="table" aria-label="Featured projects">
+            <div class="thead" role="rowgroup">
+              <div class="tr" role="row">
+                <div class="th" role="columnheader">Project</div>
+                <div class="th" role="columnheader">Stack</div>
+                <div class="th" role="columnheader">Status</div>
+                <div class="th" role="columnheader">Action</div>
+              </div>
+            </div>
+
+            <div class="tbody" role="rowgroup" id="featuredRows"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="route" data-route="projects">
+        <div class="page-header">
+          <div>
+            <h1>Projects</h1>
+            <p class="page-subtitle">Selected work: apps, systems, and things that solve real problems.</p>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-ghost" type="button" id="toggleViewBtn">Toggle view</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <form class="search-row" id="projectSearchForm">
+            <div class="field" style="margin:0;">
+              <label for="q">Search projects</label>
+              <input id="q" type="text" placeholder="Name, stack, keywords..." autocomplete="off" />
+            </div>
+            <button class="btn btn-ghost" type="submit">Search</button>
+            <button class="btn btn-ghost" type="button" id="clearSearchBtn">Clear</button>
+            <span class="chip" id="filterChip" hidden></span>
+          </form>
+
+          <div id="projectContainer" class="project-list"></div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="route" data-route="skills">
+        <div class="page-header">
+          <div>
+            <h1>Skills</h1>
+            <p class="page-subtitle">Tools I’m comfortable with and topics I’m actively deepening.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="eyebrow">Core</div>
+            <div class="card-title">Languages & frameworks</div>
+            <ul class="bullets">
+              <li>Python (Flask), SQL (PostgreSQL)</li>
+              <li>Java (OOP, data structures)</li>
+              <li>HTML/CSS/JS (clean UI, interactions)</li>
+              <li>Linux tooling & scripting</li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="eyebrow">Systems</div>
+            <div class="card-title">Reliability & workflows</div>
+            <ul class="bullets">
+              <li>HPC basics (Slurm concepts, modules)</li>
+              <li>Git habits (branching, readable diffs)</li>
+              <li>Testing mindset (sanity checks, edge cases)</li>
+              <li>Performance awareness (profiling when needed)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1.1rem;">
+          <div class="eyebrow">How I like to work</div>
+          <div class="card-title">Design → build → polish</div>
+          <p class="muted" style="margin:0;">
+            I like tight feedback loops: sketch the interface, implement the core, then refine
+            the details (navigation, micro-interactions, error states).
+          </p>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="route" data-route="experience">
+        <div class="page-header">
+          <div>
+            <h1>Experience</h1>
+            <p class="page-subtitle">Highlights, coursework focus, and what I’ve shipped.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="timeline">
+            <div class="t-item">
+              <div class="t-dot" aria-hidden="true"></div>
+              <div class="t-body">
+                <div class="t-title">Academic projects — Systems & data</div>
+                <div class="t-meta">Recent</div>
+                <p class="muted">
+                  Built multi-page CRUD apps with databases, wrote data analysis scripts, and iterated on
+                  formatting/UX the same way I would for a real user.
+                </p>
+              </div>
+            </div>
+
+            <div class="t-item">
+              <div class="t-dot" aria-hidden="true"></div>
+              <div class="t-body">
+                <div class="t-title">Teamwork — Communication & delivery</div>
+                <div class="t-meta">Ongoing</div>
+                <p class="muted">
+                  Comfortable making tradeoffs, documenting decisions, and keeping projects moving.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="route" data-route="contact">
+        <div class="page-header">
+          <div>
+            <h1>Contact</h1>
+            <p class="page-subtitle">Want to collaborate or talk about a project? Let’s connect.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="eyebrow">Email</div>
+            <div class="card-title">Reach out directly</div>
+            <p class="muted">Click to copy or open your mail client.</p>
+            <div class="btn-row">
+              <button class="btn btn-primary" id="copyEmailBtn2" type="button">Copy email</button>
+              <a class="btn btn-ghost" id="mailtoLink" href="#">Open mail</a>
+            </div>
+            <div class="chips" style="margin-top:.85rem;">
+              <span class="chip" id="emailChip">you@example.com</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="eyebrow">Message</div>
+            <div class="card-title">Quick note</div>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" placeholder="Your name" />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" placeholder="you@domain.com" />
+                </div>
+                <div class="field" style="grid-column:1/-1;">
+                  <label for="message">Message</label>
+                  <textarea id="message" rows="4" placeholder="What do you want to build?"></textarea>
+                </div>
+              </div>
+
+              <div class="btn-row" style="margin-bottom:0;">
+                <button class="btn btn-primary" type="submit">Create email draft</button>
+                <button class="btn btn-ghost" type="button" id="resetFormBtn">Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-note">
+          Built with the same theme as my “inventory system” UI: dark + cards + orange accents.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
