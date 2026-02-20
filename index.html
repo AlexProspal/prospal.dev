@@ -2,299 +2,176 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Alex Prospal — Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alexander J Prospal | Portfolio</title>
+  <meta name="description" content="Alexander J Prospal — Computer Science & Economics (Quantitative Methods) student portfolio." />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <div class="layout">
-    <aside class="sidebar">
+  <main class="main">
+    <!-- HERO -->
+    <header class="hero" id="top">
       <div class="brand">
         <div class="pill" aria-hidden="true"></div>
-        <div>
-          <div class="brand-title">Alex Prospal</div>
-          <div class="brand-sub">Software • Data • Systems</div>
-        </div>
-      </div>
-
-      <div class="nav-section">
-        <div class="nav-section-title">Browse</div>
-        <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link active" href="#overview" data-route="overview">Overview</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects" data-route="projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills" data-route="skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience" data-route="experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact" data-route="contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="nav-section">
-        <div class="nav-section-title">Links</div>
-        <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="#" id="resumeLink">Resume (PDF)</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" id="githubLink">GitHub</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" id="linkedinLink">LinkedIn</a></li>
-        </ul>
-      </div>
-
-      <div class="sidebar-footer">
-        <span class="chip" id="statusChip">Available</span>
-        <span class="chip" id="timeChip">—</span>
-      </div>
-    </aside>
-
-    <main class="main">
-      <!-- OVERVIEW -->
-      <section id="overview" class="route route-active" data-route="overview">
-        <div class="page-header">
-          <div>
-            <h1>Overview</h1>
-            <p class="page-subtitle">A quick snapshot of what I build and what I’m exploring right now.</p>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="#projects" data-route="projects">View projects</a>
-            <button class="btn btn-ghost" id="copyEmailBtn" type="button">Copy email</button>
-          </div>
-        </div>
-
-        <div class="flash" id="flash" role="status" aria-live="polite" hidden>
-          <span class="badge-dot" aria-hidden="true"></span>
-          <span id="flashText"></span>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="eyebrow">About</div>
-            <div class="card-title">Builder mindset, clean execution.</div>
-            <p class="muted">
-              I like shipping practical tools (web apps, data pipelines, systems-y projects) with
-              readable code and good UX. I’m especially into performance, reliability, and
-              “make it nice to use.”
-            </p>
-            <div class="btn-row">
-              <a class="btn btn-ghost" href="#skills" data-route="skills">Skills</a>
-              <a class="btn btn-ghost" href="#experience" data-route="experience">Experience</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="eyebrow">Now</div>
-            <div class="card-title">Current focus</div>
-
-            <div class="kv">
-              <div class="kv-row">
-                <div class="kv-key">Primary</div>
-                <div class="kv-val">Backend • Databases • Tooling</div>
-              </div>
-              <div class="kv-row">
-                <div class="kv-key">Secondary</div>
-                <div class="kv-val">Data Science • HPC workflows</div>
-              </div>
-              <div class="kv-row">
-                <div class="kv-key">Learning</div>
-                <div class="kv-val">Systems design • Security fundamentals</div>
-              </div>
-            </div>
-
-            <div class="chips">
-              <span class="chip">Flask</span>
-              <span class="chip">PostgreSQL</span>
-              <span class="chip">Python</span>
-              <span class="chip">Java</span>
-              <span class="chip">Linux</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:1.1rem;">
-          <div class="table-head">
-            <div>
-              <div class="eyebrow">Highlights</div>
-              <div class="card-title" style="margin-bottom:.2rem;">Featured work</div>
-              <p class="muted" style="margin:0;">A few things that represent my style.</p>
-            </div>
-            <a class="btn btn-ghost" href="#projects" data-route="projects">See all</a>
-          </div>
-
-          <div class="table" role="table" aria-label="Featured projects">
-            <div class="thead" role="rowgroup">
-              <div class="tr" role="row">
-                <div class="th" role="columnheader">Project</div>
-                <div class="th" role="columnheader">Stack</div>
-                <div class="th" role="columnheader">Status</div>
-                <div class="th" role="columnheader">Action</div>
-              </div>
-            </div>
-
-            <div class="tbody" role="rowgroup" id="featuredRows"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROJECTS -->
-      <section id="projects" class="route" data-route="projects">
-        <div class="page-header">
-          <div>
-            <h1>Projects</h1>
-            <p class="page-subtitle">Selected work: apps, systems, and things that solve real problems.</p>
-          </div>
-
-          <div class="btn-row">
-            <button class="btn btn-ghost" type="button" id="toggleViewBtn">Toggle view</button>
-          </div>
-        </div>
-
-        <div class="card">
-          <form class="search-row" id="projectSearchForm">
-            <div class="field" style="margin:0;">
-              <label for="q">Search projects</label>
-              <input id="q" type="text" placeholder="Name, stack, keywords..." autocomplete="off" />
-            </div>
-            <button class="btn btn-ghost" type="submit">Search</button>
-            <button class="btn btn-ghost" type="button" id="clearSearchBtn">Clear</button>
-            <span class="chip" id="filterChip" hidden></span>
-          </form>
-
-          <div id="projectContainer" class="project-list"></div>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="route" data-route="skills">
-        <div class="page-header">
-          <div>
-            <h1>Skills</h1>
-            <p class="page-subtitle">Tools I’m comfortable with and topics I’m actively deepening.</p>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <div class="card">
-            <div class="eyebrow">Core</div>
-            <div class="card-title">Languages & frameworks</div>
-            <ul class="bullets">
-              <li>Python (Flask), SQL (PostgreSQL)</li>
-              <li>Java (OOP, data structures)</li>
-              <li>HTML/CSS/JS (clean UI, interactions)</li>
-              <li>Linux tooling & scripting</li>
-            </ul>
-          </div>
-          <div class="card">
-            <div class="eyebrow">Systems</div>
-            <div class="card-title">Reliability & workflows</div>
-            <ul class="bullets">
-              <li>HPC basics (Slurm concepts, modules)</li>
-              <li>Git habits (branching, readable diffs)</li>
-              <li>Testing mindset (sanity checks, edge cases)</li>
-              <li>Performance awareness (profiling when needed)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:1.1rem;">
-          <div class="eyebrow">How I like to work</div>
-          <div class="card-title">Design → build → polish</div>
-          <p class="muted" style="margin:0;">
-            I like tight feedback loops: sketch the interface, implement the core, then refine
-            the details (navigation, micro-interactions, error states).
+        <div class="brand-text">
+          <h1 class="h1">Alexander J Prospal</h1>
+          <p class="subtitle">
+            B.S. Computer Science • B.A. Economics (Quantitative Methods) • Minor: Artificial Intelligence
           </p>
+          <p class="meta">Cleveland, OH</p>
+        </div>
+      </div>
+
+      <div class="actions" aria-label="Contact links">
+        <a class="chip" href="mailto:ajp319@case.edu"><strong>Email</strong><span>ajp319@case.edu</span></a>
+        <a class="chip" href="tel:+12163391306"><strong>Phone</strong><span>(216) 339–1306</span></a>
+        <a class="chip" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">
+          <strong>GitHub</strong><span>AlexProspal</span>
+        </a>
+        <a class="chip chip-accent" href="#projects"><strong>Projects</strong><span>↓</span></a>
+      </div>
+    </header>
+
+    <!-- GRID -->
+    <section class="grid">
+      <!-- LEFT -->
+      <section class="card">
+        <div class="card-header">
+          <h2>Education</h2>
+        </div>
+
+        <div class="entry">
+          <div class="row">
+            <div class="where">Case Western Reserve University</div>
+            <div class="when">Expected Graduation: 2028</div>
+          </div>
+          <div class="muted">Cleveland, OH</div>
+          <ul class="list">
+            <li>Bachelor of Science in Computer Science</li>
+            <li>Bachelor of Arts in Economics (Quantitative Methods Track)</li>
+            <li>Minor: Artificial Intelligence</li>
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="entry">
+          <div class="row">
+            <div class="where">Campus International High School</div>
+            <div class="when">Graduated: 2024</div>
+          </div>
+          <div class="muted">Cleveland, OH</div>
+          <ul class="list">
+            <li>Honors Diploma</li>
+            <li>Weighted GPA: 4.59 • Rank: 1 of 54</li>
+          </ul>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Relevant Coursework</div>
+          <div class="tags" role="list">
+            <span class="tag" role="listitem">Algorithms</span>
+            <span class="tag" role="listitem">Data Structures</span>
+            <span class="tag" role="listitem">Database Systems</span>
+            <span class="tag" role="listitem">Machine Learning</span>
+            <span class="tag" role="listitem">Data Visualization (R)</span>
+            <span class="tag" role="listitem">Programming in Java</span>
+            <span class="tag" role="listitem">Python Programming</span>
+            <span class="tag" role="listitem">Linear Algebra</span>
+            <span class="tag" role="listitem">Discrete Mathematics</span>
+            <span class="tag" role="listitem">Statistics</span>
+            <span class="tag" role="listitem">Computer Security</span>
+            <span class="tag" role="listitem">Microeconomic Theory</span>
+            <span class="tag" role="listitem">Macroeconomic Theory</span>
+          </div>
         </div>
       </section>
 
-      <!-- EXPERIENCE -->
-      <section id="experience" class="route" data-route="experience">
-        <div class="page-header">
-          <div>
-            <h1>Experience</h1>
-            <p class="page-subtitle">Highlights, coursework focus, and what I’ve shipped.</p>
+      <!-- RIGHT -->
+      <aside class="card">
+        <div class="card-header">
+          <h2>Technical Skills</h2>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Programming Languages</div>
+          <div class="tags">
+            <span class="tag">Java</span>
+            <span class="tag">Python</span>
+            <span class="tag">R</span>
+            <span class="tag">SQL</span>
           </div>
         </div>
 
-        <div class="card">
-          <div class="timeline">
-            <div class="t-item">
-              <div class="t-dot" aria-hidden="true"></div>
-              <div class="t-body">
-                <div class="t-title">Academic projects — Systems & data</div>
-                <div class="t-meta">Recent</div>
-                <p class="muted">
-                  Built multi-page CRUD apps with databases, wrote data analysis scripts, and iterated on
-                  formatting/UX the same way I would for a real user.
-                </p>
-              </div>
-            </div>
-
-            <div class="t-item">
-              <div class="t-dot" aria-hidden="true"></div>
-              <div class="t-body">
-                <div class="t-title">Teamwork — Communication & delivery</div>
-                <div class="t-meta">Ongoing</div>
-                <p class="muted">
-                  Comfortable making tradeoffs, documenting decisions, and keeping projects moving.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="route" data-route="contact">
-        <div class="page-header">
-          <div>
-            <h1>Contact</h1>
-            <p class="page-subtitle">Want to collaborate or talk about a project? Let’s connect.</p>
+        <div class="section">
+          <div class="section-title">Computer Science Concepts</div>
+          <div class="tags">
+            <span class="tag">Algorithms</span>
+            <span class="tag">Data Structures</span>
+            <span class="tag">Databases</span>
+            <span class="tag">Machine Learning</span>
           </div>
         </div>
 
-        <div class="grid-2">
-          <div class="card">
-            <div class="eyebrow">Email</div>
-            <div class="card-title">Reach out directly</div>
-            <p class="muted">Click to copy or open your mail client.</p>
-            <div class="btn-row">
-              <button class="btn btn-primary" id="copyEmailBtn2" type="button">Copy email</button>
-              <a class="btn btn-ghost" id="mailtoLink" href="#">Open mail</a>
-            </div>
-            <div class="chips" style="margin-top:.85rem;">
-              <span class="chip" id="emailChip">you@example.com</span>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="eyebrow">Message</div>
-            <div class="card-title">Quick note</div>
-
-            <form id="contactForm" class="contact-form">
-              <div class="form-grid">
-                <div class="field">
-                  <label for="name">Name</label>
-                  <input id="name" type="text" placeholder="Your name" />
-                </div>
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" type="email" placeholder="you@domain.com" />
-                </div>
-                <div class="field" style="grid-column:1/-1;">
-                  <label for="message">Message</label>
-                  <textarea id="message" rows="4" placeholder="What do you want to build?"></textarea>
-                </div>
-              </div>
-
-              <div class="btn-row" style="margin-bottom:0;">
-                <button class="btn btn-primary" type="submit">Create email draft</button>
-                <button class="btn btn-ghost" type="button" id="resetFormBtn">Reset</button>
-              </div>
-            </form>
+        <div class="section">
+          <div class="section-title">Mathematics</div>
+          <div class="tags">
+            <span class="tag">Linear Algebra</span>
+            <span class="tag">Discrete Math</span>
+            <span class="tag">Calculus</span>
+            <span class="tag">Statistics</span>
           </div>
         </div>
 
-        <div class="footer-note">
-          Built with the same theme as my “inventory system” UI: dark + cards + orange accents.
+        <div class="section">
+          <div class="section-title">Additional Information</div>
+          <ul class="list">
+            <li>Strong communication skills developed through collaborative academic work</li>
+            <li>Highly organized, dependable, and attentive to detail in fast-paced, public-facing environments</li>
+            <li>Comfortable following established policies and procedures while taking initiative to address issues proactively</li>
+            <li>Calm and professional under pressure; able to balance multiple responsibilities independently and as part of a team</li>
+          </ul>
         </div>
-      </section>
-    </main>
-  </div>
+
+        <button class="btn btn-ghost" id="copyEmailBtn" type="button" aria-label="Copy email address">
+          Copy email
+        </button>
+      </aside>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="card" id="projects">
+      <div class="project-title">
+        <h2>Projects</h2>
+        <span class="badge">CSDS 341</span>
+      </div>
+
+      <p class="muted" style="margin:.35rem 0 .75rem;">
+        Theater Inventory Database System — Intro to Database Systems
+      </p>
+
+      <ul class="list">
+        <li>Designed and implemented a relational database system to manage a theater troupe’s inventory, including costumes, props, and shows</li>
+        <li>Created a normalized SQL schema with clearly defined primary keys, foreign keys, and integrity constraints to enforce data consistency</li>
+        <li>Wrote and tested complex SQL queries involving multi-table joins, aggregations, and nested subqueries to answer realistic business questions</li>
+        <li>Built a Python application and command-line interface to interact with the database, process user input, and execute parameterized SQL queries</li>
+        <li>Implemented database initialization and population scripts to load structured sample data for testing and demonstration</li>
+        <li>Documented system design decisions, schema structure, and query logic in a comprehensive final report</li>
+      </ul>
+
+      <div class="btn-row" style="margin-top:.9rem;">
+        <a class="btn btn-primary" href="#top">Back to top</a>
+        <a class="btn btn-ghost" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">
+          View GitHub
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Single-page portfolio • Sidebar removed • Static deploy-ready</span>
+    </footer>
+  </main>
 
   <script src="script.js"></script>
 </body>
