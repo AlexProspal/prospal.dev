@@ -7,96 +7,100 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="layout">
-    <aside class="sidebar">
+  <header class="topbar">
+    <div class="container topbar-inner">
       <div class="brand">
         <div class="pill" aria-hidden="true"></div>
         <div>
           <div class="brand-title">Portfolio Template</div>
-          <div class="brand-sub">Dark UI • Cards • Accent</div>
+          <div class="brand-sub">Full-width layout • No sidebar</div>
         </div>
       </div>
 
-      <div class="nav-section">
-        <div class="nav-section-title">Browse</div>
-        <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Overview</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-      <div class="nav-section">
-        <div class="nav-section-title">Links</div>
-        <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="#">Resume (placeholder)</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">GitHub (placeholder)</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">LinkedIn (placeholder)</a></li>
-        </ul>
+      <div class="top-actions">
+        <a class="btn btn-ghost" href="#">Resume</a>
+        <a class="btn btn-primary" href="projects.html">Explore</a>
       </div>
+    </div>
+  </header>
 
-      <div class="sidebar-footer">
-        <span class="chip">Template</span>
-        <span class="chip">Multi-page</span>
-      </div>
-    </aside>
-
-    <main class="main">
-      <div class="page-header">
-        <div>
-          <h1>Overview</h1>
-          <p class="page-subtitle">A neutral template with placeholder content you can replace later.</p>
-        </div>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="projects.html">View projects</a>
-          <a class="btn btn-ghost" href="contact.html">Contact</a>
-        </div>
-      </div>
-
-      <div class="flash" id="flash" role="status" aria-live="polite" hidden>
-        <span class="badge-dot" aria-hidden="true"></span>
-        <span id="flashText"></span>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <div class="eyebrow">About</div>
-          <div class="card-title">Short intro section</div>
-          <p class="muted">
-            This area is designed for a concise bio. For now it contains neutral placeholder text.
-            Replace it later with your real focus (software, data, design, etc.).
+  <main>
+    <div class="container">
+      <section class="page-hero">
+        <div class="hero-card">
+          <div class="eyebrow">Overview</div>
+          <h1>Full-screen portfolio template</h1>
+          <p class="subtitle">
+            A clean multi-page starter with dark cards, orange accents, and structured sections.
+            Everything is placeholder text — no personal data included.
           </p>
-          <div class="btn-row" style="margin-bottom:0;">
-            <a class="btn btn-ghost" href="skills.html">Skills</a>
-            <a class="btn btn-ghost" href="experience.html">Experience</a>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="projects.html">View project list</a>
+            <a class="btn btn-ghost" href="skills.html">See skills layout</a>
+            <button class="btn btn-ghost" type="button" onclick="flash('Template loaded.')">Test flash</button>
+          </div>
+
+          <div class="flash" id="flash" role="status" aria-live="polite" hidden>
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span id="flashText"></span>
           </div>
         </div>
 
-        <div class="card">
-          <div class="eyebrow">Now</div>
-          <div class="card-title">Current focus (placeholder)</div>
+        <div class="hero-card">
+          <div class="eyebrow">Quick stats</div>
+          <div class="card-title">Placeholders</div>
           <div class="chips">
-            <span class="chip">Topic A</span>
-            <span class="chip">Topic B</span>
-            <span class="chip">Topic C</span>
-            <span class="chip">Tool 1</span>
-            <span class="chip">Tool 2</span>
+            <span class="chip">Focus: Topic A</span>
+            <span class="chip">Stack: Tool B</span>
+            <span class="chip">Interest: Area C</span>
+            <span class="chip">Status: Building</span>
           </div>
           <hr class="sep" />
           <p class="muted" style="margin:0;">
-            Add a short “what I’m working on” line here later.
+            Replace chips with real highlights later (languages, interests, domains).
           </p>
         </div>
-      </div>
+      </section>
 
-      <div class="card" style="margin-top:1.1rem;">
+      <section class="grid-3">
+        <div class="card">
+          <div class="eyebrow">Section</div>
+          <div class="card-title">About card</div>
+          <p class="muted">Short placeholder bio. Keep it to 2–3 sentences when you personalize it.</p>
+          <div class="chips">
+            <span class="chip">Principle 1</span>
+            <span class="chip">Principle 2</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Section</div>
+          <div class="card-title">Featured project</div>
+          <p class="muted">A placeholder highlight with a call-to-action.</p>
+          <a class="btn btn-primary" href="projects.html">Go to projects</a>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Section</div>
+          <div class="card-title">Contact preview</div>
+          <p class="muted">This stays anonymous until you fill it in.</p>
+          <a class="btn btn-ghost" href="contact.html">Contact page</a>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:1.1rem;">
         <div class="eyebrow">Highlights</div>
-        <div class="card-title">Featured projects</div>
-        <p class="muted" style="margin-top:0;">
-          A table-style layout similar to your Flask app pages.
-        </p>
+        <div class="card-title">Table-style layout</div>
+        <p class="muted" style="margin:0;">Same “inventory app” feel, but full-width.</p>
 
         <div class="table" role="table" aria-label="Featured projects">
           <div class="thead" role="rowgroup">
@@ -110,48 +114,29 @@
           <div class="tbody" role="rowgroup">
             <div class="tr" role="row">
               <div class="td" role="cell">
-                <div style="font-weight:600;">Project Placeholder One</div>
-                <div class="muted" style="font-size:.85rem;margin-top:.15rem;">
-                  One-line description of what it does.
-                </div>
+                <div style="font-weight:650;">Project Placeholder One</div>
+                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">One-line description.</div>
               </div>
-              <div class="td" role="cell">
-                <span class="chip">Framework</span>
-                <span class="chip">Database</span>
-              </div>
-              <div class="td" role="cell">
-                <span class="status-pill status-build">In progress</span>
-              </div>
-              <div class="td" role="cell">
-                <a class="btn btn-ghost" href="projects.html">Open</a>
-              </div>
+              <div class="td" role="cell"><span class="chip">Tool</span> <span class="chip">DB</span></div>
+              <div class="td" role="cell"><span class="status-pill status-build">In progress</span></div>
+              <div class="td" role="cell"><a class="btn btn-ghost" href="projects.html">Open</a></div>
             </div>
-
             <div class="tr" role="row">
               <div class="td" role="cell">
-                <div style="font-weight:600;">Project Placeholder Two</div>
-                <div class="muted" style="font-size:.85rem;margin-top:.15rem;">
-                  Another short description line.
-                </div>
+                <div style="font-weight:650;">Project Placeholder Two</div>
+                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">One-line description.</div>
               </div>
-              <div class="td" role="cell">
-                <span class="chip">Language</span>
-                <span class="chip">Tooling</span>
-              </div>
-              <div class="td" role="cell">
-                <span class="status-pill status-in">Shipped</span>
-              </div>
-              <div class="td" role="cell">
-                <a class="btn btn-ghost" href="projects.html">Open</a>
-              </div>
+              <div class="td" role="cell"><span class="chip">Language</span> <span class="chip">Framework</span></div>
+              <div class="td" role="cell"><span class="status-pill status-in">Shipped</span></div>
+              <div class="td" role="cell"><a class="btn btn-ghost" href="projects.html">Open</a></div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="footer-note">Edit placeholders later — theme + layout are ready.</div>
-    </main>
-  </div>
+      <footer>Template only — replace placeholders when ready.</footer>
+    </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
