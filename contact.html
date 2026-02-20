@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio Template — Contact</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="pill" aria-hidden="true"></div>
+        <div>
+          <div class="brand-title">Portfolio Template</div>
+          <div class="brand-sub">Dark UI • Cards • Accent</div>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Browse</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <span class="chip">Contact</span>
+        <span class="chip">Placeholder</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="page-header">
+        <div>
+          <h1>Contact</h1>
+          <p class="page-subtitle">A standard contact page with placeholder-only fields.</p>
+        </div>
+      </div>
+
+      <div class="flash" id="flash" role="status" aria-live="polite" hidden>
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span id="flashText"></span>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="eyebrow">Contact details</div>
+          <div class="card-title">Placeholders</div>
+          <p class="muted">No personal info included yet. Replace these when ready.</p>
+
+          <div class="chips">
+            <span class="chip">email@example.com</span>
+            <span class="chip">github.com/username</span>
+            <span class="chip">linkedin.com/in/username</span>
+          </div>
+
+          <hr class="sep" />
+          <div class="btn-row" style="margin-bottom:0;">
+            <button class="btn btn-primary" type="button" onclick="flash('Placeholder action.')">Primary action</button>
+            <button class="btn btn-ghost" type="button" onclick="flash('Placeholder action.')">Secondary</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Message</div>
+          <div class="card-title">Contact form</div>
+
+          <form onsubmit="event.preventDefault(); flash('Form is placeholder (no submission).');">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@domain.com" />
+              </div>
+              <div class="field" style="grid-column:1/-1;">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Write a short message..."></textarea>
+              </div>
+            </div>
+
+            <div class="btn-row" style="margin-bottom:0;">
+              <button class="btn btn-primary" type="submit">Submit (placeholder)</button>
+              <button class="btn btn-ghost" type="button" onclick="document.querySelector('form').reset(); flash('Reset.');">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-note">When you want, I can wire this to an email draft or backend endpoint.</div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

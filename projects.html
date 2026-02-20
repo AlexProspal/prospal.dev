@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio Template — Projects</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="pill" aria-hidden="true"></div>
+        <div>
+          <div class="brand-title">Portfolio Template</div>
+          <div class="brand-sub">Dark UI • Cards • Accent</div>
+        </div>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Browse</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <span class="chip">Projects</span>
+        <span class="chip">Searchable</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="page-header">
+        <div>
+          <h1>Projects</h1>
+          <p class="page-subtitle">A standard listing page with a search bar and table-like rows.</p>
+        </div>
+      </div>
+
+      <div class="flash" id="flash" role="status" aria-live="polite" hidden>
+        <span class="badge-dot" aria-hidden="true"></span>
+        <span id="flashText"></span>
+      </div>
+
+      <div class="card">
+        <form class="search-row" onsubmit="event.preventDefault();">
+          <div class="field" style="margin:0;">
+            <label for="q">Search projects</label>
+            <input id="q" type="text" placeholder="Placeholder search (static template)" />
+          </div>
+          <button class="btn btn-ghost" type="button" onclick="flash('Search is placeholder — wire to JS later.')">Search</button>
+          <button class="btn btn-ghost" type="button" onclick="document.getElementById('q').value=''; flash('Cleared.');">Clear</button>
+          <span class="chip">Static template</span>
+        </form>
+
+        <div class="table" role="table" aria-label="Projects table">
+          <div class="thead" role="rowgroup">
+            <div class="tr" role="row">
+              <div class="th" role="columnheader">Name</div>
+              <div class="th" role="columnheader">Stack</div>
+              <div class="th" role="columnheader">Status</div>
+              <div class="th" role="columnheader">Links</div>
+            </div>
+          </div>
+
+          <div class="tbody" role="rowgroup">
+            <div class="tr" role="row">
+              <div class="td" role="cell">
+                <div style="font-weight:600;">Project Placeholder A</div>
+                <div class="muted" style="font-size:.85rem;margin-top:.15rem;">Short description line.</div>
+              </div>
+              <div class="td" role="cell">
+                <span class="chip">Tool</span> <span class="chip">DB</span>
+              </div>
+              <div class="td" role="cell"><span class="status-pill status-build">In progress</span></div>
+              <div class="td" role="cell"><a class="btn btn-ghost" href="#">Repo</a></div>
+            </div>
+
+            <div class="tr" role="row">
+              <div class="td" role="cell">
+                <div style="font-weight:600;">Project Placeholder B</div>
+                <div class="muted" style="font-size:.85rem;margin-top:.15rem;">Short description line.</div>
+              </div>
+              <div class="td" role="cell">
+                <span class="chip">Language</span> <span class="chip">Framework</span>
+              </div>
+              <div class="td" role="cell"><span class="status-pill status-in">Shipped</span></div>
+              <div class="td" role="cell"><a class="btn btn-ghost" href="#">Demo</a></div>
+            </div>
+
+            <div class="tr" role="row">
+              <div class="td" role="cell">
+                <div style="font-weight:600;">Project Placeholder C</div>
+                <div class="muted" style="font-size:.85rem;margin-top:.15rem;">Short description line.</div>
+              </div>
+              <div class="td" role="cell">
+                <span class="chip">Library</span> <span class="chip">Tooling</span>
+              </div>
+              <div class="td" role="cell"><span class="status-pill status-out">Archived</span></div>
+              <div class="td" role="cell"><a class="btn btn-ghost" href="#">Notes</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">Replace placeholder rows with real projects later.</div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
