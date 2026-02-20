@@ -3,173 +3,387 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Alexander J Prospal | Portfolio</title>
-  <meta name="description" content="Alexander J Prospal — Computer Science & Economics (Quantitative Methods) student portfolio." />
+  <title>Alexander J Prospal</title>
+  <meta name="description" content="Alexander J Prospal — CS & Economics student building systems across databases, software, and data." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <main class="main">
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="logo" href="#top" aria-label="Home">
+        <span class="logo-dot" aria-hidden="true"></span>
+        <span class="logo-text">ajp</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        Menu
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav" hidden>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="content" class="container">
     <!-- HERO -->
-    <header class="hero" id="top">
-      <div class="brand">
-        <div class="pill" aria-hidden="true"></div>
-        <div class="brand-text">
-          <h1 class="h1">Alexander J Prospal</h1>
-          <p class="subtitle">
-            B.S. Computer Science • B.A. Economics (Quantitative Methods) • Minor: Artificial Intelligence
-          </p>
-          <p class="meta">Cleveland, OH</p>
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <div class="kicker">
+          <span class="kicker-pill">Cleveland, OH</span>
+          <span class="kicker-dot" aria-hidden="true"></span>
+          <span class="kicker-muted">Open to internships</span>
+        </div>
+
+        <h1>
+          Hi, I’m <span class="accent">Alexander Prospal</span>.
+          I build reliable software systems and data-driven tools.
+        </h1>
+
+        <p class="lead">
+          I’m a Computer Science + Economics (Quantitative Methods) student with an AI minor.
+          I like turning messy requirements into clean schemas, dependable code, and useful interfaces.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+          <button class="btn subtle" id="copyEmailBtn" type="button">Copy email</button>
+        </div>
+
+        <div class="hero-links">
+          <a class="chip" href="mailto:ajp319@case.edu">ajp319@case.edu</a>
+          <a class="chip" href="tel:+12163391306">(216) 339–1306</a>
+          <a class="chip" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">GitHub</a>
         </div>
       </div>
 
-      <div class="actions" aria-label="Contact links">
-        <a class="chip" href="mailto:ajp319@case.edu"><strong>Email</strong><span>ajp319@case.edu</span></a>
-        <a class="chip" href="tel:+12163391306"><strong>Phone</strong><span>(216) 339–1306</span></a>
-        <a class="chip" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">
-          <strong>GitHub</strong><span>AlexProspal</span>
-        </a>
-        <a class="chip chip-accent" href="#projects"><strong>Projects</strong><span>↓</span></a>
-      </div>
-    </header>
-
-    <!-- GRID -->
-    <section class="grid">
-      <!-- LEFT -->
-      <section class="card">
-        <div class="card-header">
-          <h2>Education</h2>
-        </div>
-
-        <div class="entry">
-          <div class="row">
-            <div class="where">Case Western Reserve University</div>
-            <div class="when">Expected Graduation: 2028</div>
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <div class="orb" aria-hidden="true"></div>
+            <div>
+              <div class="small-title">Currently</div>
+              <div class="big-title">CWRU • Class of 2028</div>
+            </div>
           </div>
-          <div class="muted">Cleveland, OH</div>
-          <ul class="list">
-            <li>Bachelor of Science in Computer Science</li>
-            <li>Bachelor of Arts in Economics (Quantitative Methods Track)</li>
-            <li>Minor: Artificial Intelligence</li>
+
+          <div class="hero-card-grid">
+            <div class="mini">
+              <div class="mini-label">Focus</div>
+              <div class="mini-value">Databases, systems, ML</div>
+            </div>
+            <div class="mini">
+              <div class="mini-label">Strengths</div>
+              <div class="mini-value">Structured thinking, detail</div>
+            </div>
+            <div class="mini">
+              <div class="mini-label">Tools</div>
+              <div class="mini-value">Java • Python • SQL • R</div>
+            </div>
+            <div class="mini">
+              <div class="mini-label">Based in</div>
+              <div class="mini-value">Cleveland, OH</div>
+            </div>
+          </div>
+
+          <div class="hero-card-bottom">
+            <span class="badge">B.S. Computer Science</span>
+            <span class="badge">B.A. Economics (QM)</span>
+            <span class="badge">AI Minor</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK STATS STRIP -->
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-title">Education</div>
+        <div class="stat-value">CWRU (2028)</div>
+        <div class="stat-sub">CS + Economics (QM) • AI minor</div>
+      </div>
+      <div class="stat">
+        <div class="stat-title">Featured Work</div>
+        <div class="stat-value">Inventory DB System</div>
+        <div class="stat-sub">Schema + queries + CLI app</div>
+      </div>
+      <div class="stat">
+        <div class="stat-title">Strength</div>
+        <div class="stat-value">Systems mindset</div>
+        <div class="stat-sub">Design → implement → document</div>
+      </div>
+      <div class="stat">
+        <div class="stat-title">Languages</div>
+        <div class="stat-value">Java • Python</div>
+        <div class="stat-sub">SQL • R</div>
+      </div>
+    </section>
+
+    <!-- MAIN GRID OF ROUNDED BOXES -->
+    <section class="grid">
+      <!-- ABOUT -->
+      <article class="card" id="about">
+        <div class="card-head">
+          <h2>About</h2>
+          <span class="card-hint">Personal</span>
+        </div>
+
+        <p>
+          I like building software that feels “finished”: clear UX, strong data modeling,
+          and clean implementation details that hold up under pressure.
+        </p>
+
+        <p class="muted">
+          Recently I’ve been working on database-driven projects: designing normalized schemas,
+          writing complex SQL queries, and connecting the data layer to simple tools that people can actually use.
+        </p>
+
+        <div class="callout">
+          <div class="callout-title">What I care about</div>
+          <ul class="bullets">
+            <li><strong>Correctness</strong> (constraints, validation, edge cases)</li>
+            <li><strong>Clarity</strong> (readable code + understandable interfaces)</li>
+            <li><strong>Proof</strong> (tests, examples, documentation)</li>
           </ul>
+        </div>
+      </article>
+
+      <!-- EDUCATION -->
+      <article class="card">
+        <div class="card-head">
+          <h2>Education</h2>
+          <span class="card-hint">Academic</span>
+        </div>
+
+        <div class="item">
+          <div class="item-top">
+            <div class="item-title">Case Western Reserve University</div>
+            <div class="item-meta">Expected 2028 • Cleveland, OH</div>
+          </div>
+          <div class="muted">
+            B.S. Computer Science • B.A. Economics (Quantitative Methods) • Minor: Artificial Intelligence
+          </div>
         </div>
 
         <div class="divider"></div>
 
-        <div class="entry">
-          <div class="row">
-            <div class="where">Campus International High School</div>
-            <div class="when">Graduated: 2024</div>
+        <div class="item">
+          <div class="item-top">
+            <div class="item-title">Campus International High School</div>
+            <div class="item-meta">2024 • Cleveland, OH</div>
           </div>
-          <div class="muted">Cleveland, OH</div>
-          <ul class="list">
-            <li>Honors Diploma</li>
-            <li>Weighted GPA: 4.59 • Rank: 1 of 54</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <div class="section-title">Relevant Coursework</div>
-          <div class="tags" role="list">
-            <span class="tag" role="listitem">Algorithms</span>
-            <span class="tag" role="listitem">Data Structures</span>
-            <span class="tag" role="listitem">Database Systems</span>
-            <span class="tag" role="listitem">Machine Learning</span>
-            <span class="tag" role="listitem">Data Visualization (R)</span>
-            <span class="tag" role="listitem">Programming in Java</span>
-            <span class="tag" role="listitem">Python Programming</span>
-            <span class="tag" role="listitem">Linear Algebra</span>
-            <span class="tag" role="listitem">Discrete Mathematics</span>
-            <span class="tag" role="listitem">Statistics</span>
-            <span class="tag" role="listitem">Computer Security</span>
-            <span class="tag" role="listitem">Microeconomic Theory</span>
-            <span class="tag" role="listitem">Macroeconomic Theory</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- RIGHT -->
-      <aside class="card">
-        <div class="card-header">
-          <h2>Technical Skills</h2>
-        </div>
-
-        <div class="section">
-          <div class="section-title">Programming Languages</div>
-          <div class="tags">
-            <span class="tag">Java</span>
-            <span class="tag">Python</span>
-            <span class="tag">R</span>
-            <span class="tag">SQL</span>
+          <div class="muted">
+            Honors Diploma • Weighted GPA: 4.59 • Rank: 1 of 54
           </div>
         </div>
 
-        <div class="section">
-          <div class="section-title">Computer Science Concepts</div>
-          <div class="tags">
-            <span class="tag">Algorithms</span>
-            <span class="tag">Data Structures</span>
-            <span class="tag">Databases</span>
-            <span class="tag">Machine Learning</span>
+        <div class="tags">
+          <span class="tag">Algorithms</span>
+          <span class="tag">Data Structures</span>
+          <span class="tag">Databases</span>
+          <span class="tag">Machine Learning</span>
+          <span class="tag">Statistics</span>
+          <span class="tag">Linear Algebra</span>
+        </div>
+      </article>
+
+      <!-- EXPERIENCE / LEADERSHIP -->
+      <article class="card" id="experience">
+        <div class="card-head">
+          <h2>Experience</h2>
+          <span class="card-hint">Timeline</span>
+        </div>
+
+        <div class="timeline">
+          <div class="t">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-body">
+              <div class="t-title">Student Developer / Project Work</div>
+              <div class="t-sub">Database + software coursework projects</div>
+              <div class="t-text muted">
+                Designed schemas, implemented query-heavy features, and wrote end-to-end documentation.
+                (See featured projects below.)
+              </div>
+            </div>
+          </div>
+
+          <div class="t">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-body">
+              <div class="t-title">High school academic leadership</div>
+              <div class="t-sub">Rank 1 of 54 • consistent high performance</div>
+              <div class="t-text muted">
+                Strong habits around clarity, organization, and follow-through.
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="section">
-          <div class="section-title">Mathematics</div>
-          <div class="tags">
-            <span class="tag">Linear Algebra</span>
-            <span class="tag">Discrete Math</span>
-            <span class="tag">Calculus</span>
-            <span class="tag">Statistics</span>
+        <div class="note">
+          Want this section to include jobs/clubs? Tell me what to list and I’ll format it to match.
+        </div>
+      </article>
+
+      <!-- FEATURED PROJECTS -->
+      <article class="card span-2" id="projects">
+        <div class="card-head">
+          <h2>Featured Projects</h2>
+          <span class="card-hint">Selected work</span>
+        </div>
+
+        <div class="projects">
+          <div class="project">
+            <div class="project-top">
+              <div>
+                <div class="project-title">Theater Inventory Database System</div>
+                <div class="project-sub muted">Relational schema • complex queries • CLI tool</div>
+              </div>
+              <span class="pill-badge">CSDS 341</span>
+            </div>
+
+            <ul class="bullets">
+              <li>Designed a normalized SQL schema with PK/FK constraints for inventory + productions.</li>
+              <li>Wrote multi-table join queries, aggregations, and nested subqueries for real workflows.</li>
+              <li>Built a CLI app to take user input and run parameterized queries safely.</li>
+              <li>Created initialization + sample data scripts, plus clear documentation.</li>
+            </ul>
+
+            <div class="project-tags">
+              <span class="tag">SQL</span>
+              <span class="tag">Schema Design</span>
+              <span class="tag">Joins</span>
+              <span class="tag">Python</span>
+              <span class="tag">CLI</span>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn small ghost" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">GitHub</a>
+              <a class="btn small subtle" href="#contact">Ask for a demo</a>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-top">
+              <div>
+                <div class="project-title">Coursework Systems & Data Projects</div>
+                <div class="project-sub muted">Java • Python • R • structured problem solving</div>
+              </div>
+              <span class="pill-badge">Ongoing</span>
+            </div>
+
+            <ul class="bullets">
+              <li>Built programs with strong emphasis on correctness, testing, and readable structure.</li>
+              <li>Worked across data analysis tasks (R) and software systems (Java/Python).</li>
+              <li>Focus on “production-like” quality: docs, edge cases, and consistent formatting.</li>
+            </ul>
+
+            <div class="project-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">R</span>
+              <span class="tag">Algorithms</span>
+              <span class="tag">Data</span>
+            </div>
+
+            <div class="project-actions">
+              <a class="btn small ghost" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">GitHub</a>
+            </div>
           </div>
         </div>
+      </article>
 
-        <div class="section">
-          <div class="section-title">Additional Information</div>
-          <ul class="list">
-            <li>Strong communication skills developed through collaborative academic work</li>
-            <li>Highly organized, dependable, and attentive to detail in fast-paced, public-facing environments</li>
-            <li>Comfortable following established policies and procedures while taking initiative to address issues proactively</li>
-            <li>Calm and professional under pressure; able to balance multiple responsibilities independently and as part of a team</li>
-          </ul>
+      <!-- SKILLS -->
+      <article class="card span-2" id="skills">
+        <div class="card-head">
+          <h2>Skills</h2>
+          <span class="card-hint">What I use</span>
         </div>
 
-        <button class="btn btn-ghost" id="copyEmailBtn" type="button" aria-label="Copy email address">
-          Copy email
-        </button>
-      </aside>
-    </section>
+        <div class="skill-grid">
+          <div class="skill-box">
+            <div class="skill-title">Languages</div>
+            <div class="tags">
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">R</span>
+            </div>
+          </div>
 
-    <!-- PROJECTS -->
-    <section class="card" id="projects">
-      <div class="project-title">
-        <h2>Projects</h2>
-        <span class="badge">CSDS 341</span>
-      </div>
+          <div class="skill-box">
+            <div class="skill-title">Core CS</div>
+            <div class="tags">
+              <span class="tag">Data Structures</span>
+              <span class="tag">Algorithms</span>
+              <span class="tag">Databases</span>
+              <span class="tag">Machine Learning</span>
+            </div>
+          </div>
 
-      <p class="muted" style="margin:.35rem 0 .75rem;">
-        Theater Inventory Database System — Intro to Database Systems
-      </p>
+          <div class="skill-box">
+            <div class="skill-title">Math</div>
+            <div class="tags">
+              <span class="tag">Linear Algebra</span>
+              <span class="tag">Discrete Math</span>
+              <span class="tag">Calculus</span>
+              <span class="tag">Statistics</span>
+            </div>
+          </div>
 
-      <ul class="list">
-        <li>Designed and implemented a relational database system to manage a theater troupe’s inventory, including costumes, props, and shows</li>
-        <li>Created a normalized SQL schema with clearly defined primary keys, foreign keys, and integrity constraints to enforce data consistency</li>
-        <li>Wrote and tested complex SQL queries involving multi-table joins, aggregations, and nested subqueries to answer realistic business questions</li>
-        <li>Built a Python application and command-line interface to interact with the database, process user input, and execute parameterized SQL queries</li>
-        <li>Implemented database initialization and population scripts to load structured sample data for testing and demonstration</li>
-        <li>Documented system design decisions, schema structure, and query logic in a comprehensive final report</li>
-      </ul>
+          <div class="skill-box">
+            <div class="skill-title">Work style</div>
+            <ul class="bullets">
+              <li>Clear documentation & communication</li>
+              <li>Detail-oriented; strong follow-through</li>
+              <li>Calm under pressure; consistent output</li>
+            </ul>
+          </div>
+        </div>
+      </article>
 
-      <div class="btn-row" style="margin-top:.9rem;">
-        <a class="btn btn-primary" href="#top">Back to top</a>
-        <a class="btn btn-ghost" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">
-          View GitHub
-        </a>
-      </div>
+      <!-- CONTACT -->
+      <article class="card" id="contact">
+        <div class="card-head">
+          <h2>Contact</h2>
+          <span class="card-hint">Let’s talk</span>
+        </div>
+
+        <p class="muted">
+          If you’re hiring interns or want to chat about a project, reach out:
+        </p>
+
+        <div class="contact-box">
+          <a class="btn primary full" href="mailto:ajp319@case.edu">Email me</a>
+          <a class="btn ghost full" href="https://github.com/AlexProspal" target="_blank" rel="noreferrer noopener">GitHub</a>
+          <button class="btn subtle full" id="copyEmailBtn2" type="button">Copy email</button>
+        </div>
+
+        <div class="contact-small muted">
+          ajp319@case.edu • (216) 339–1306 • Cleveland, OH
+        </div>
+      </article>
     </section>
 
     <footer class="footer">
-      <span>Single-page portfolio • Sidebar removed • Static deploy-ready</span>
+      <div class="footer-inner">
+        <span class="muted">© <span id="year"></span> Alexander Prospal</span>
+        <a class="muted" href="#top">Back to top ↑</a>
+      </div>
     </footer>
   </main>
 
