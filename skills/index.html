@@ -5,10 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Skills • prospal.dev</title>
-  <link rel="icon" type="image/x-icon" href="Jerome.jpeg">
+  <link rel="icon" type="image/x-icon" href="/Jerome.jpeg">
 
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/script.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -42,8 +42,8 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="Resume.pdf">Resume</a>
-            <a class="btn" href="projects.html">Projects</a>
+            <a class="btn" href="/Resume.pdf">Resume</a>
+            <a class="btn" href="/projects/">Projects</a>
           </div>
         </div>
 
@@ -122,7 +122,18 @@
           These come from collaborative academic work and balancing multiple responsibilities in public-facing environments.
         </p>
       </section>
+
+      <footer>
+        <div class="container">© <span id="year"></span> Alexander Prospal</div>
+      </footer>
     </div>
   </main>
+
+  <script>
+    (function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
 </body>
 </html>

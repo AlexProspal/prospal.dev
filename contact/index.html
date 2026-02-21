@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact</title>
-  <link rel="icon" type="image/x-icon" href="Jerome.jpeg">
+  <title>Contact • prospal.dev</title>
+  <link rel="icon" type="image/x-icon" href="/Jerome.jpeg">
 
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/script.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -41,7 +41,7 @@
 
           <div class="hero-actions">
             <a class="btn" href="mailto:alexander@prospal.dev">Email</a>
-            <a class="btn" href="Resume.pdf">Resume</a>
+            <a class="btn" href="/Resume.pdf">Resume</a>
           </div>
         </div>
 
@@ -68,7 +68,7 @@
           <div class="card-title">Online</div>
           <div class="chips">
             <span class="chip"><a href="https://github.com/AlexProspal">GitHub</a></span>
-            <span class="chip"><a href="Resume.pdf">Resume PDF</a></span>
+            <span class="chip"><a href="/Resume.pdf">Resume PDF</a></span>
           </div>
           <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
             If you’re reaching out about a role, sharing a job description is helpful so I can point to the most relevant work.
@@ -87,7 +87,18 @@
           </p>
         </div>
       </section>
+
+      <footer>
+        <div class="container">© <span id="year"></span> Alexander Prospal</div>
+      </footer>
     </div>
   </main>
+
+  <script>
+    (function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
 </body>
 </html>

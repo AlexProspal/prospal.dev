@@ -5,10 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Projects • prospal.dev</title>
-  <link rel="icon" type="image/x-icon" href="Jerome.jpeg">
+  <link rel="icon" type="image/x-icon" href="/Jerome.jpeg">
 
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/script.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -42,7 +42,7 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="Resume.pdf">Full resume</a>
+            <a class="btn" href="/Resume.pdf">Full resume</a>
             <a class="btn" href="https://github.com/AlexProspal">GitHub</a>
           </div>
         </div>
@@ -120,11 +120,22 @@
           Internship opportunities where I can ship reliable software, learn from strong engineering teams, and work on systems with real users.
         </p>
         <div class="hero-actions" style="margin-top:1rem;">
-          <a class="btn" href="contact.html">Contact</a>
-          <a class="btn" href="skills.html">Skills overview</a>
+          <a class="btn" href="/contact/">Contact</a>
+          <a class="btn" href="/skills/">Skills overview</a>
         </div>
       </section>
+
+      <footer>
+        <div class="container">© <span id="year"></span> Alexander Prospal</div>
+      </footer>
     </div>
   </main>
+
+  <script>
+    (function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
 </body>
 </html>

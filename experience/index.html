@@ -5,10 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Experience • prospal.dev</title>
-  <link rel="icon" type="image/x-icon" href="Jerome.jpeg">
+  <link rel="icon" type="image/x-icon" href="/Jerome.jpeg">
 
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/script.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -42,8 +42,8 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="projects.html">See projects</a>
-            <a class="btn" href="Resume.pdf">Resume</a>
+            <a class="btn" href="/projects/">See projects</a>
+            <a class="btn" href="/Resume.pdf">Resume</a>
           </div>
         </div>
 
@@ -95,7 +95,18 @@
         <div class="card-title">Campus International High School</div>
         <p class="muted" style="margin:0;">Honors Diploma (Graduated 2024)</p>
       </section>
+
+      <footer>
+        <div class="container">© <span id="year"></span> Alexander Prospal</div>
+      </footer>
     </div>
   </main>
+
+  <script>
+    (function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
 </body>
 </html>
