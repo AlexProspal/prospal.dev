@@ -23,7 +23,7 @@
 
       <nav class="nav" aria-label="Primary navigation">
         <a href="/">Overview</a>
-        <a href="/projects/">Projects</a>
+        <a href="/projects/" class="active" aria-current="page">Projects</a>
         <a href="/skills/">Skills</a>
         <a href="/experience/">Experience</a>
         <a href="/contact/">Contact</a>
@@ -124,18 +124,7 @@
           <a class="btn" href="/skills/">Skills overview</a>
         </div>
       </section>
-
-      <footer>
-        <div class="container">© <span id="year"></span> Alexander Prospal</div>
-      </footer>
     </div>
   </main>
-
-  <script>
-    (function(){
-      var y = document.getElementById('year');
-      if (y) y.textContent = String(new Date().getFullYear());
-    })();
-  </script>
 </body>
 </html>
