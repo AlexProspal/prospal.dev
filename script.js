@@ -1,18 +1,56 @@
 /* ES5-friendly script for broad browser support */
 (function () {
-  function getCurrentFileName() {
-    var path = (window.location && window.location.pathname) ? window.location.pathname : "";
-    var parts = path.split("/");
-    var last = parts.length ? parts[parts.length - 1] : "";
-    last = (last || "index.html").toLowerCase();
+  // Normalize a path/href to a "route key" so we can highlight the active nav link.
+  // Examples:
+  //   "/" or "/index.html"           -> "/"
+  //   "/contact" or "/contact/"      -> "/contact/"
+  //   "/contact/index.html"          -> "/contact/"
+  //   "contact/" (relative)          -> "/contact/"
+  function normalizeRoute(p) {
+    if (!p) return "/";
 
-    // If served from a URL ending with "/", treat as index.html
-    if (last === "") last = "index.html";
-    return last;
+    // Ignore query/hash if present.
+    p = String(p);
+    var q = p.indexOf("?");
+    if (q !== -1) p = p.slice(0, q);
+    var h = p.indexOf("#");
+    if (h !== -1) p = p.slice(0, h);
+
+    // If it's a full URL, take just the pathname.
+    // (Avoid URL() constructor for older browsers.)
+    var proto = p.indexOf("://");
+    if (proto !== -1) {
+      var slash3 = p.indexOf("/", proto + 3);
+      p = slash3 === -1 ? "/" : p.slice(slash3);
+    }
+
+    // Ensure it starts with a slash.
+    if (p.charAt(0) !== "/") p = "/" + p;
+
+    // Home page aliases.
+    var lower = p.toLowerCase();
+    if (lower === "/index.html" || lower === "/index.htm") return "/";
+
+    // Convert folder index -> folder route
+    if (lower.length >= 11 && lower.slice(-11) === "/index.html") {
+      p = p.slice(0, -10); // keep trailing slash
+    } else if (lower.length >= 10 && lower.slice(-10) === "/index.htm") {
+      p = p.slice(0, -9);
+    }
+
+    // Ensure directory routes end with '/' (except '/').
+    if (p !== "/" && p.charAt(p.length - 1) !== "/") p = p + "/";
+
+    // Collapse accidental double slashes at the end.
+    while (p.length > 1 && p.slice(-2) === "//") p = p.slice(0, -1);
+
+    return p;
   }
 
   function setActiveNav() {
-    var file = getCurrentFileName();
+    var current = normalizeRoute(
+      (window.location && window.location.pathname) ? window.location.pathname : "/"
+    );
     var links = document.querySelectorAll(".nav a");
     var i;
 
@@ -20,8 +58,10 @@
       var a = links[i];
       if (a.classList) a.classList.remove("active");
 
-      var href = (a.getAttribute("href") || "").toLowerCase();
-      if (href === file) {
+      var hrefRaw = a.getAttribute("href") || "";
+      var href = normalizeRoute(hrefRaw);
+
+      if (href === current) {
         if (a.classList) a.classList.add("active");
       }
     }
@@ -61,7 +101,6 @@
         document.execCommand("copy");
         setTempButtonText(btn, "Copied!", 1400);
       } catch (e) {
-        // If copy fails, do nothing visible (no flash text).
         setTempButtonText(btn, "Copy email", 1400);
       }
       document.body.removeChild(ta);
