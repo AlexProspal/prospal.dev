@@ -130,18 +130,21 @@ header.topbar{
   font-size:.86rem;
   font-weight:600;
   cursor:pointer;
+
   background:transparent;
   color:var(--accent-strong);
   text-decoration:none;
+
   gap:.4rem;
   white-space:nowrap;
+
   border:1px solid rgba(255,179,71,0.55);
   box-shadow:none;
+
   -webkit-appearance:none;
   appearance:none;
 }
 
-/* All buttons share the same look: outlined by default, orange fill on hover */
 .btn:hover{
   background:#ff9f1c; /* fallback */
   background:linear-gradient(135deg, var(--accent-strong), #ffbf69);
@@ -154,24 +157,6 @@ header.topbar{
 .btn:focus-visible{
   outline:2px solid rgba(255,179,71,0.75);
   outline-offset:2px;
-}
-
-/* Keep class names for HTML compatibility, but don't change styling */
-.btn-primary,
-.btn-ghost{
-  background:transparent;
-  border-color:rgba(255,179,71,0.55);
-  color:var(--accent-strong);
-}
-
-.btn-primary:hover,
-.btn-ghost:hover{
-  background:#ff9f1c; /* fallback */
-  background:linear-gradient(135deg, var(--accent-strong), #ffbf69);
-  color:#1b1204;
-  border-color:transparent;
-  box-shadow:0 10px 30px rgba(255,159,28,0.35);
-  text-decoration:none;
 }
 
 .btn[disabled],
