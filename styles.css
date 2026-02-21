@@ -136,17 +136,24 @@ header.topbar{
   text-decoration:none;
   gap:.4rem;
   white-space:nowrap;
-  -webkit-appearance: none;
-  appearance: none;
+  -webkit-appearance:none;
+  appearance:none;
 }
 
 .btn-primary{
-  background:#ff9f1c; /* fallback */
+  background:transparent;
+  border:1px solid rgba(255,179,71,0.55);
+  color:var(--accent-strong);
+  box-shadow:none;
+}
+.btn-primary:hover{
+  background:#ff9f1c;
   background:linear-gradient(135deg, var(--accent-strong), #ffbf69);
   color:#1b1204;
+  border-color:transparent;
   box-shadow:0 10px 30px rgba(255,159,28,0.35);
+  text-decoration:none;
 }
-.btn-primary:hover{ filter:brightness(1.03); text-decoration:none; }
 
 .btn-ghost{
   border-color:rgba(255,255,255,0.14);
