@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skills • prospal.dev</title>
+  <link rel="icon" type="image/x-icon" href="Jerome.jpeg">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="pill" aria-hidden="true"></div>
+        <div>
+          <div class="brand-title">Alexander Prospal</div>
+          <div class="brand-sub">Computer Science • Economics</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Overview</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="page-hero">
+        <div class="hero-card">
+          <div class="eyebrow">Skills</div>
+          <h1>Technical toolkit</h1>
+          <p class="subtitle">
+            Core languages, CS concepts, and quantitative background from my CS + Economics (Quantitative Methods) coursework.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="Resume.pdf">Resume</a>
+            <a class="btn" href="projects.html">Projects</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="eyebrow">Relevant coursework</div>
+          <div class="card-title">Current focus</div>
+          <div class="chips">
+            <span class="chip">Machine Learning</span>
+            <span class="chip">Algorithms</span>
+            <span class="chip">Database Systems</span>
+            <span class="chip">Computer Security</span>
+            <span class="chip">Data Visualization (R)</span>
+            <span class="chip">Linear Algebra</span>
+            <span class="chip">Statistics</span>
+            <span class="chip">Discrete Mathematics</span>
+            <span class="chip">Micro/Macro Theory</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-3">
+        <div class="card">
+          <div class="eyebrow">Programming languages</div>
+          <div class="card-title">What I write</div>
+          <div class="chips">
+            <span class="chip">Python</span>
+            <span class="chip">Java</span>
+            <span class="chip">SQL</span>
+            <span class="chip">R</span>
+          </div>
+          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+            Comfortable moving between scripting, backend logic, and data analysis workflows.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Computer science</div>
+          <div class="card-title">Concepts</div>
+          <div class="chips">
+            <span class="chip">Algorithms</span>
+            <span class="chip">Data Structures</span>
+            <span class="chip">Databases</span>
+            <span class="chip">Machine Learning</span>
+          </div>
+          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+            I like translating messy requirements into clean abstractions with strong constraints.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Math &amp; quantitative</div>
+          <div class="card-title">Foundations</div>
+          <div class="chips">
+            <span class="chip">Linear Algebra</span>
+            <span class="chip">Discrete Math</span>
+            <span class="chip">Calculus</span>
+            <span class="chip">Statistics</span>
+          </div>
+          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+            Useful for ML, optimization thinking, and data-driven decision-making.
+          </p>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:1.1rem;">
+        <div class="eyebrow">Strengths</div>
+        <div class="card-title">How I work</div>
+        <div class="chips">
+          <span class="chip">Strong communication</span>
+          <span class="chip">Highly organized</span>
+          <span class="chip">Attentive to detail</span>
+          <span class="chip">Calm under pressure</span>
+          <span class="chip">Proactive</span>
+        </div>
+        <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+          These come from collaborative academic work and balancing multiple responsibilities in public-facing environments.
+        </p>
+      </section>
+
+      <footer>
+        <div class="container">© <span id="year"></span> Alexander Prospal</div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>

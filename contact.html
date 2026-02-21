@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact • prospal.dev</title>
+  <link rel="icon" type="image/x-icon" href="Jerome.jpeg">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="pill" aria-hidden="true"></div>
+        <div>
+          <div class="brand-title">Alexander Prospal</div>
+          <div class="brand-sub">Computer Science • Economics</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html">Overview</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="page-hero">
+        <div class="hero-card">
+          <div class="eyebrow">Contact</div>
+          <h1>Get in touch</h1>
+          <p class="subtitle">Best way to reach me is email. I’m happy to share more details or links to specific work.</p>
+
+          <div class="hero-actions">
+            <a class="btn" href="mailto:alexander@prospal.dev">Email</a>
+            <a class="btn" href="Resume.pdf">Resume</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="eyebrow">Details</div>
+          <div class="card-title">Alexander Prospal</div>
+          <p class="muted" style="margin:.35rem 0 0; line-height:1.55;">
+            <span style="display:block;">Cleveland, OH</span>
+            <span style="display:block;">(216) 339-1306</span>
+            <span style="display:block;">Website: prospal.dev</span>
+            <span style="display:block;">Email: alexander@prospal.dev</span>
+          </p>
+
+          <div class="hero-actions" style="margin-top:1rem;">
+            <a class="btn" href="mailto:alexander@prospal.dev">Email me</a>
+            <button class="btn" id="copyEmailBtn" type="button">Copy email</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-2">
+        <div class="card">
+          <div class="eyebrow">Links</div>
+          <div class="card-title">Online</div>
+          <div class="chips">
+            <span class="chip"><a href="https://github.com/AlexProspal">GitHub</a></span>
+            <span class="chip"><a href="Resume.pdf">Resume PDF</a></span>
+          </div>
+          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+            If you’re reaching out about a role, sharing a job description is helpful so I can point to the most relevant work.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="eyebrow">Note</div>
+          <div class="card-title">Quick context</div>
+          <p class="muted" style="margin:0;">
+            CWRU student pursuing Computer Science and Economics (Quantitative Methods), with an Artificial Intelligence minor.
+          </p>
+          <hr class="sep" />
+          <p class="muted" style="margin:0;">
+            Interested in databases, machine learning, and building clean, reliable software.
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <div class="container">© <span id="year"></span> Alexander Prospal</div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>
