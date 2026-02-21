@@ -246,24 +246,6 @@ h1{
 }
 .muted{ color:var(--muted); font-size:.92rem; }
 
-.flash{
-  margin:1rem 0 0;
-  background:var(--accent-soft);
-  border:1px solid rgba(255,179,71,0.5);
-  color:var(--accent-strong);
-  padding:.55rem .8rem;
-  border-radius:.75rem;
-  font-size:.88rem;
-  display:flex;
-  align-items:center;
-  gap:.4rem;
-}
-.badge-dot{
-  width:9px; height:9px;
-  border-radius:999px;
-  background:var(--accent-strong);
-}
-
 .chips{
   display:flex;
   flex-wrap:wrap;

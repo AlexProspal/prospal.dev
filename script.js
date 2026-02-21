@@ -27,30 +27,20 @@
     }
   }
 
-  function flash(message) {
-    var box = document.getElementById("flash");
-    var text = document.getElementById("flashText");
-    if (!box || !text) return;
-
-    text.textContent = String(message);
-    box.hidden = false;
-
-    if (flash._t) {
-      window.clearTimeout(flash._t);
+  // Minimal feedback without any flash/banner: temporarily change the button text.
+  function setTempButtonText(btn, text, ms) {
+    if (!btn) return;
+    var original = btn.getAttribute("data-original-text");
+    if (!original) {
+      original = btn.textContent;
+      btn.setAttribute("data-original-text", original);
     }
-    flash._t = window.setTimeout(function () {
-      box.hidden = true;
-    }, 2400);
-  }
+    btn.textContent = text;
 
-  function wireFlashButton() {
-    // Backwards-compatible: if the old id exists, keep it working.
-    var btn = document.getElementById("flashBtn");
-    if (btn) {
-      btn.addEventListener("click", function () {
-        flash("Thanks for visiting.");
-      });
-    }
+    window.setTimeout(function () {
+      var back = btn.getAttribute("data-original-text") || original;
+      btn.textContent = back;
+    }, ms || 1400);
   }
 
   function wireCopyEmailButton() {
@@ -69,9 +59,10 @@
       ta.select();
       try {
         document.execCommand("copy");
-        flash("Copied: " + email);
+        setTempButtonText(btn, "Copied!", 1400);
       } catch (e) {
-        flash("Email: " + email);
+        // If copy fails, do nothing visible (no flash text).
+        setTempButtonText(btn, "Copy email", 1400);
       }
       document.body.removeChild(ta);
     }
@@ -79,7 +70,7 @@
     btn.addEventListener("click", function () {
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(email).then(function () {
-          flash("Copied: " + email);
+          setTempButtonText(btn, "Copied!", 1400);
         }, function () {
           fallbackCopy();
         });
@@ -91,10 +82,6 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     setActiveNav();
-    wireFlashButton();
     wireCopyEmailButton();
   });
-
-  // Optional: expose flash globally if you ever want to call it elsewhere
-  window.flash = flash;
 })();
