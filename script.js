@@ -44,16 +44,55 @@
   }
 
   function wireFlashButton() {
+    // Backwards-compatible: if the old id exists, keep it working.
     var btn = document.getElementById("flashBtn");
+    if (btn) {
+      btn.addEventListener("click", function () {
+        flash("Thanks for visiting.");
+      });
+    }
+  }
+
+  function wireCopyEmailButton() {
+    var btn = document.getElementById("copyEmailBtn");
     if (!btn) return;
+
+    var email = "ajp319@case.edu";
+
+    function fallbackCopy() {
+      var ta = document.createElement("textarea");
+      ta.value = email;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        flash("Copied: " + email);
+      } catch (e) {
+        flash("Email: " + email);
+      }
+      document.body.removeChild(ta);
+    }
+
     btn.addEventListener("click", function () {
-      flash("Template loaded.");
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(function () {
+          flash("Copied: " + email);
+        }, function () {
+          fallbackCopy();
+        });
+      } else {
+        fallbackCopy();
+      }
     });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     setActiveNav();
     wireFlashButton();
+    wireCopyEmailButton();
   });
 
   // Optional: expose flash globally if you ever want to call it elsewhere

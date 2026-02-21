@@ -5,7 +5,7 @@
   <!-- Helps older/embedded browsers choose the best rendering mode -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio Template — Overview</title>
+  <title>Alexander J Prospal — Portfolio</title>
 
   <link rel="stylesheet" href="styles.css" />
   <!-- Defer so parsing is stable across browsers; also keeps JS off the bottom -->
@@ -17,8 +17,8 @@
       <div class="brand">
         <div class="pill" aria-hidden="true"></div>
         <div>
-          <div class="brand-title">Portfolio Template</div>
-          <div class="brand-sub">Full-width layout • No sidebar</div>
+          <div class="brand-title">Alexander J Prospal</div>
+          <div class="brand-sub">Computer Science • Economics • AI</div>
         </div>
       </div>
 
@@ -31,7 +31,7 @@
       </nav>
 
       <div class="top-actions">
-        <a class="btn btn-ghost" href="#">Resume</a>
+        <a class="btn btn-ghost" href="Alexander%20Prospal%20Resume.pdf">Resume</a>
         <a class="btn btn-primary" href="projects.html">Explore</a>
       </div>
     </div>
@@ -42,17 +42,19 @@
       <section class="page-hero">
         <div class="hero-card">
           <div class="eyebrow">Overview</div>
-          <h1>Full-screen portfolio template</h1>
+          <h1>Alexander J Prospal</h1>
           <p class="subtitle">
-            A clean multi-page starter with dark cards, orange accents, and structured sections.
-            Everything is placeholder text — no personal data included.
+            CWRU student pursuing a B.S. in Computer Science and a B.A. in Economics (Quantitative Methods),
+            with an Artificial Intelligence minor. Interested in databases, machine learning, and building
+            clean, reliable software.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="projects.html">View project list</a>
-            <a class="btn btn-ghost" href="skills.html">See skills layout</a>
+            <a class="btn btn-primary" href="projects.html">Projects</a>
+            <a class="btn btn-ghost" href="Alexander%20Prospal%20Resume.pdf">Download resume</a>
+            <a class="btn btn-ghost" href="https://github.com/AlexProspal">GitHub</a>
             <!-- No inline onclick: works better with stricter CSPs and some embedded browsers -->
-            <button class="btn btn-ghost" type="button" id="flashBtn">Test flash</button>
+            <button class="btn btn-ghost" type="button" id="copyEmailBtn">Copy email</button>
           </div>
 
           <div class="flash" id="flash" role="status" aria-live="polite" hidden>
@@ -63,84 +65,116 @@
 
         <div class="hero-card">
           <div class="eyebrow">Quick stats</div>
-          <div class="card-title">Placeholders</div>
+          <div class="card-title">At a glance</div>
           <div class="chips">
-            <span class="chip">Focus: Topic A</span>
-            <span class="chip">Stack: Tool B</span>
-            <span class="chip">Interest: Area C</span>
-            <span class="chip">Status: Building</span>
+            <span class="chip">CWRU • Cleveland, OH</span>
+            <span class="chip">Expected grad: 2028</span>
+            <span class="chip">Minor: Artificial Intelligence</span>
+            <span class="chip">Java • Python • SQL • R</span>
           </div>
           <hr class="sep" />
           <p class="muted" style="margin:0;">
-            Replace chips with real highlights later (languages, interests, domains).
+            Coursework: Algorithms, Data Structures, Database Systems, Machine Learning, Statistics.
           </p>
         </div>
       </section>
 
       <section class="grid-3">
         <div class="card">
-          <div class="eyebrow">Section</div>
-          <div class="card-title">About card</div>
-          <p class="muted">Short placeholder bio. Keep it to 2–3 sentences when you personalize it.</p>
+          <div class="eyebrow">About</div>
+          <div class="card-title">Student developer</div>
+          <p class="muted">
+            I like taking messy real-world needs and turning them into structured systems.
+            Most recently, I built a relational database + Python CLI for managing theater inventory.
+          </p>
           <div class="chips">
-            <span class="chip">Principle 1</span>
-            <span class="chip">Principle 2</span>
+            <span class="chip">Detail-oriented</span>
+            <span class="chip">Calm under pressure</span>
           </div>
         </div>
 
         <div class="card">
-          <div class="eyebrow">Section</div>
-          <div class="card-title">Featured project</div>
-          <p class="muted">A placeholder highlight with a call-to-action.</p>
-          <a class="btn btn-primary" href="projects.html">Go to projects</a>
+          <div class="eyebrow">Featured</div>
+          <div class="card-title">Theater Inventory Database System</div>
+          <p class="muted">
+            Designed a normalized SQL schema with integrity constraints, wrote complex multi-table queries,
+            and built a Python command-line interface using parameterized SQL.
+          </p>
+          <div class="chips">
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+            <span class="chip">Relational design</span>
+          </div>
+          <div style="margin-top:.9rem;">
+            <a class="btn btn-primary" href="projects.html">See details</a>
+          </div>
         </div>
 
         <div class="card">
-          <div class="eyebrow">Section</div>
-          <div class="card-title">Contact preview</div>
-          <p class="muted">This stays anonymous until you fill it in.</p>
-          <a class="btn btn-ghost" href="contact.html">Contact page</a>
+          <div class="eyebrow">Contact</div>
+          <div class="card-title">Let’s connect</div>
+          <p class="muted" style="margin-bottom:.65rem;">
+            <span style="display:block;">Cleveland, OH</span>
+            <span style="display:block;">ajp319@case.edu</span>
+            <span style="display:block;">(216) 339–1306</span>
+          </p>
+          <a class="btn btn-ghost" href="mailto:ajp319@case.edu">Email me</a>
         </div>
       </section>
 
       <section class="card" style="margin-top:1.1rem;">
         <div class="eyebrow">Highlights</div>
-        <div class="card-title">Table-style layout</div>
-        <p class="muted" style="margin:0;">Same “inventory app” feel, but full-width.</p>
+        <div class="card-title">Resume snapshot</div>
+        <p class="muted" style="margin:0;">A few key items pulled directly from my resume.</p>
 
-        <div class="table" role="table" aria-label="Featured projects">
+        <div class="table" role="table" aria-label="Featured highlights">
           <div class="thead" role="rowgroup">
             <div class="tr" role="row">
-              <div class="th" role="columnheader">Project</div>
-              <div class="th" role="columnheader">Stack</div>
+              <div class="th" role="columnheader">Item</div>
+              <div class="th" role="columnheader">Details</div>
               <div class="th" role="columnheader">Status</div>
-              <div class="th" role="columnheader">Action</div>
+              <div class="th" role="columnheader">Link</div>
             </div>
           </div>
           <div class="tbody" role="rowgroup">
             <div class="tr" role="row">
               <div class="td" role="cell">
-                <div style="font-weight:650;">Project Placeholder One</div>
-                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">One-line description.</div>
+                <div style="font-weight:650;">Education</div>
+                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">
+                  Case Western Reserve University • BS Computer Science + BA Economics (Quant Methods)
+                </div>
               </div>
-              <div class="td" role="cell"><span class="chip">Tool</span> <span class="chip">DB</span></div>
+              <div class="td" role="cell"><span class="chip">Minor: AI</span> <span class="chip">Expected 2028</span></div>
               <div class="td" role="cell"><span class="status-pill status-build">In progress</span></div>
-              <div class="td" role="cell"><a class="btn btn-ghost" href="projects.html">Open</a></div>
+              <div class="td" role="cell"><a class="btn btn-ghost" href="Alexander%20Prospal%20Resume.pdf">Resume</a></div>
             </div>
+
             <div class="tr" role="row">
               <div class="td" role="cell">
-                <div style="font-weight:650;">Project Placeholder Two</div>
-                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">One-line description.</div>
+                <div style="font-weight:650;">Project</div>
+                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">
+                  Theater Inventory Database System — relational schema + Python CLI + realistic SQL analytics
+                </div>
               </div>
-              <div class="td" role="cell"><span class="chip">Language</span> <span class="chip">Framework</span></div>
-              <div class="td" role="cell"><span class="status-pill status-in">Shipped</span></div>
-              <div class="td" role="cell"><a class="btn btn-ghost" href="projects.html">Open</a></div>
+              <div class="td" role="cell"><span class="chip">Python</span> <span class="chip">SQL</span></div>
+              <div class="td" role="cell"><span class="status-pill status-in">Completed</span></div>
+              <div class="td" role="cell"><a class="btn btn-ghost" href="projects.html">Projects</a></div>
+            </div>
+
+            <div class="tr" role="row">
+              <div class="td" role="cell">
+                <div style="font-weight:650;">Skills</div>
+                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">Programming + core CS + quantitative math background</div>
+              </div>
+              <div class="td" role="cell"><span class="chip">Java</span> <span class="chip">R</span> <span class="chip">Databases</span></div>
+              <div class="td" role="cell"><span class="status-pill status-in">Core</span></div>
+              <div class="td" role="cell"><a class="btn btn-ghost" href="skills.html">Skills</a></div>
             </div>
           </div>
         </div>
       </section>
 
-      <footer>Template only — replace placeholders when ready.</footer>
+      <footer>© 2026 Alexander J Prospal • ajp319@case.edu • Cleveland, OH</footer>
     </div>
   </main>
 </body>
