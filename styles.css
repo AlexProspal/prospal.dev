@@ -18,7 +18,7 @@ body{
   margin:0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color:#050814; /* fallback */
-  background-image: radial-gradient(circle at top, #18213f 0, #050814 55%, #000 100%);
+  /* background-image: radial-gradient(circle at top, #18213f 0, #050814 55%, #000 100%); */
   color:var(--text);
 }
 
