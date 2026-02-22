@@ -1,47 +1,32 @@
-/* ES5-friendly script for broad browser support */
 (function () {
-  // Normalize a path/href to a "route key" so we can highlight the active nav link.
-  // Examples:
-  //   "/" or "/index.html"           -> "/"
-  //   "/contact" or "/contact/"      -> "/contact/"
-  //   "/contact/index.html"          -> "/contact/"
-  //   "contact/" (relative)          -> "/contact/"
   function normalizeRoute(p) {
     if (!p) return "/";
 
-    // Ignore query/hash if present.
     p = String(p);
     var q = p.indexOf("?");
     if (q !== -1) p = p.slice(0, q);
     var h = p.indexOf("#");
     if (h !== -1) p = p.slice(0, h);
 
-    // If it's a full URL, take just the pathname.
-    // (Avoid URL() constructor for older browsers.)
     var proto = p.indexOf("://");
     if (proto !== -1) {
       var slash3 = p.indexOf("/", proto + 3);
       p = slash3 === -1 ? "/" : p.slice(slash3);
     }
 
-    // Ensure it starts with a slash.
     if (p.charAt(0) !== "/") p = "/" + p;
 
-    // Home page aliases.
     var lower = p.toLowerCase();
     if (lower === "/index.html" || lower === "/index.htm") return "/";
 
-    // Convert folder index -> folder route
     if (lower.length >= 11 && lower.slice(-11) === "/index.html") {
-      p = p.slice(0, -10); // keep trailing slash
+      p = p.slice(0, -10);
     } else if (lower.length >= 10 && lower.slice(-10) === "/index.htm") {
       p = p.slice(0, -9);
     }
 
-    // Ensure directory routes end with '/' (except '/').
     if (p !== "/" && p.charAt(p.length - 1) !== "/") p = p + "/";
 
-    // Collapse accidental double slashes at the end.
     while (p.length > 1 && p.slice(-2) === "//") p = p.slice(0, -1);
 
     return p;
@@ -67,7 +52,6 @@
     }
   }
 
-  // Minimal feedback without any flash/banner: temporarily change the button text.
   function setTempButtonText(btn, text, ms) {
     if (!btn) return;
     var original = btn.getAttribute("data-original-text");
@@ -87,7 +71,7 @@
     var btn = document.getElementById("copyEmailBtn");
     if (!btn) return;
 
-    var email = "ajp319@case.edu";
+    var email = "alexander@prospal.dev";
 
     function fallbackCopy() {
       var ta = document.createElement("textarea");
