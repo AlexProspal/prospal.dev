@@ -5,31 +5,139 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Resume • Alexander Prospal</title>
   <link rel="icon" type="image/x-icon" href="/Jerome.jpeg">
-  <link rel="stylesheet" href="/styles.css">
+
+  <link rel="stylesheet" href="/styles.css?v={{ site.github.build_revision }}">
+
   <style>
-    /* full-viewport PDF viewer with your site background */
-    .pdf-wrap {
-      max-width: 1100px;
-      margin: 1.2rem auto;
-      padding: 0 1rem;
+    /* Page background that matches your existing dark theme vibe */
+    .resume-page {
+      min-height: 100vh;
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(255,255,255,.07), rgba(0,0,0,0) 60%),
+        radial-gradient(700px 450px at 90% 10%, rgba(255,255,255,.06), rgba(0,0,0,0) 55%);
     }
+
+    .resume-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.1rem 1rem 2rem;
+    }
+
+    .resume-hero {
+      display: grid;
+      gap: .9rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .resume-hero .hero-title {
+      margin: 0;
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      letter-spacing: -0.02em;
+    }
+
+    .resume-hero .hero-sub {
+      margin: 0;
+      opacity: .85;
+      line-height: 1.45;
+      max-width: 70ch;
+    }
+
+    /* Sticky toolbar card */
+    .toolbar {
+      position: sticky;
+      top: .85rem;
+      z-index: 50;
+      border-radius: 18px;
+      padding: .75rem .75rem;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 10px 30px rgba(0,0,0,.28);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      flex-wrap: wrap;
+    }
+
+    .toolbar .group {
+      display: flex;
+      gap: .55rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Use your existing .btn styles, but support "secondary" small buttons */
+    .btn.small {
+      padding: .45rem .7rem;
+      font-size: .92rem;
+      border-radius: 999px;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .viewer-card {
+      margin-top: 1rem;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 12px 40px rgba(0,0,0,.33);
+    }
+
     .pdf-frame {
       width: 100%;
-      height: calc(100vh - 180px);
+      height: calc(100vh - 250px);
       border: 0;
-      border-radius: 16px;
-      overflow: hidden;
-      background: rgba(255,255,255,0.02);
+      display: block;
+      background: rgba(0,0,0,0.25);
     }
-    .pdf-actions {
-      display: flex;
-      gap: .6rem;
-      flex-wrap: wrap;
-      margin-bottom: .8rem;
+
+    .footer-note {
+      margin-top: .9rem;
+      opacity: .85;
+      line-height: 1.45;
+    }
+
+    .kbd {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: .95em;
+      padding: .12rem .35rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
     }
   </style>
+
+  <script>
+    // PDF display behavior varies by browser. These fragments help many viewers.
+    const PDF_PATH = "/Resume.pdf";
+
+    function setPdfView(mode) {
+      const frame = document.getElementById("pdfFrame");
+      let fragment = "#view=FitH"; // default: fit to width-ish
+
+      if (mode === "fit-width") fragment = "#view=FitH&zoom=page-width";
+      if (mode === "fit-page")  fragment = "#view=Fit&zoom=page-fit";
+      if (mode === "100")       fragment = "#zoom=100";
+      if (mode === "125")       fragment = "#zoom=125";
+      if (mode === "150")       fragment = "#zoom=150";
+
+      frame.src = PDF_PATH + fragment;
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      // Default on load: fit width
+      setPdfView("fit-width");
+    });
+  </script>
 </head>
-<body>
+
+<body class="resume-page">
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
@@ -49,17 +157,41 @@
     </div>
   </header>
 
-  <main class="pdf-wrap">
-    <div class="pdf-actions">
-      <a class="btn" href="/Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
-      <a class="btn" href="/Resume.pdf" download>Download PDF</a>
+  <main class="resume-wrap">
+    <section class="resume-hero">
+      <h1 class="hero-title">Resume</h1>
+      <p class="hero-sub">
+        If the PDF looks too small, use the zoom controls below, or press <span class="kbd">Ctrl</span> / <span class="kbd">⌘</span> + <span class="kbd">+</span>.
+      </p>
+    </section>
+
+    <div class="toolbar" role="region" aria-label="Resume controls">
+      <div class="group">
+        <a class="btn small" href="/Resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+        <a class="btn small ghost" href="/Resume.pdf" download>Download</a>
+      </div>
+
+      <div class="group" aria-label="Zoom controls">
+        <button class="btn small ghost" type="button" onclick="setPdfView('fit-width')">Fit width</button>
+        <button class="btn small ghost" type="button" onclick="setPdfView('fit-page')">Fit page</button>
+        <button class="btn small ghost" type="button" onclick="setPdfView('100')">100%</button>
+        <button class="btn small ghost" type="button" onclick="setPdfView('125')">125%</button>
+        <button class="btn small ghost" type="button" onclick="setPdfView('150')">150%</button>
+      </div>
     </div>
 
-    <iframe class="pdf-frame" src="/Resume.pdf#view=FitH" title="Resume PDF"></iframe>
+    <section class="viewer-card" aria-label="PDF viewer">
+      <iframe
+        id="pdfFrame"
+        class="pdf-frame"
+        title="Resume PDF"
+        loading="eager"
+        src="/Resume.pdf#view=FitH&zoom=page-width">
+      </iframe>
+    </section>
 
-    <!-- fallback if iframe blocked -->
-    <p class="muted" style="margin-top:.9rem;">
-      If the PDF doesn’t display, <a href="/Resume.pdf">click here to open it directly</a>.
+    <p class="footer-note muted">
+      If the PDF doesn’t render in this embedded viewer, <a href="/Resume.pdf">open it directly here</a>.
     </p>
   </main>
 </body>
