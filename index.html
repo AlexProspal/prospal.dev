@@ -38,8 +38,8 @@
           <h1>Alexander Prospal</h1>
           <p class="subtitle">
             CWRU student pursuing a B.S. in Computer Science and a B.A. in Economics (Quantitative Methods),
-            with an Artificial Intelligence minor. Interested in databases, security, and building clean,
-            reliable software.
+            with an Artificial Intelligence minor. I’m especially interested in AI/ML and data-driven systems,
+            with a strong foundation in databases and security.
           </p>
 
           <div class="hero-actions">
@@ -64,51 +64,60 @@
         </div>
       </section>
 
-      <section class="grid-3">
-        <div class="card">
-          <div class="eyebrow">Dashboard</div>
-          <div class="card-title">Focus</div>
-          <div class="chips">
-            <span class="chip">Databases</span>
-            <span class="chip">Security</span>
-            <span class="chip">Backend</span>
-            <span class="chip">Data analysis</span>
-          </div>
-          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
-            I like building systems where correctness matters: data integrity, predictable behavior, and clear failure modes.
-          </p>
-        </div>
+      <!-- Dashboard wrapped in a card (like Projects section) -->
+      <section class="card" style="margin-top:1.1rem;">
+        <div class="eyebrow">Dashboard</div>
+        <div class="card-title">What I’m focused on</div>
+        <p class="muted" style="margin:0;">
+          I’m building toward AI/ML work while keeping a practical engineering base: strong data models,
+          secure defaults, and systems that behave predictably.
+        </p>
 
-        <div class="card">
-          <div class="eyebrow">Dashboard</div>
-          <div class="card-title">Toolbox</div>
-          <div class="chips">
-            <span class="chip">Python</span>
-            <span class="chip">SQL</span>
-            <span class="chip">Java</span>
-            <span class="chip">R</span>
-            <span class="chip">Linux</span>
-            <span class="chip">Git</span>
+        <section class="grid-3" style="margin-top:1rem;">
+          <div class="card" style="box-shadow:none;">
+            <div class="eyebrow">Focus</div>
+            <div class="card-title">AI/ML + Foundations</div>
+            <div class="chips">
+              <span class="chip">AI / ML</span>
+              <span class="chip">Data analysis</span>
+              <span class="chip">Backend</span>
+            </div>
+            <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+              I’m most excited by machine learning and intelligent systems — especially when the data pipeline,
+              evaluation, and real constraints are treated seriously.
+            </p>
           </div>
-          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
-            Stronger in backend + data modeling than UI-heavy work (but I keep interfaces clean and usable).
-          </p>
-        </div>
 
-        <div class="card">
-          <div class="eyebrow">Dashboard</div>
-          <div class="card-title">How I work</div>
-          <div class="chips">
-            <span class="chip">Define constraints</span>
-            <span class="chip">Model data</span>
-            <span class="chip">Implement</span>
-            <span class="chip">Test</span>
-            <span class="chip">Document</span>
+          <div class="card" style="box-shadow:none;">
+            <div class="eyebrow">Strengths</div>
+            <div class="card-title">Databases & Security</div>
+            <div class="chips">
+              <span class="chip">Databases</span>
+              <span class="chip">Security</span>
+              <span class="chip">Data integrity</span>
+            </div>
+            <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+              I like building systems where correctness matters: constraints, clean schemas, safe data handling,
+              and failure modes you can reason about.
+            </p>
           </div>
-          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
-            I prefer simple designs that are easy to verify, extend, and explain.
-          </p>
-        </div>
+
+          <div class="card" style="box-shadow:none;">
+            <div class="eyebrow">Workflow</div>
+            <div class="card-title">How I build</div>
+            <div class="chips">
+              <span class="chip">Define constraints</span>
+              <span class="chip">Model data</span>
+              <span class="chip">Implement</span>
+              <span class="chip">Test</span>
+              <span class="chip">Document</span>
+            </div>
+            <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+              I prefer simple designs that are easy to verify and extend. I like writing things down clearly,
+              so projects are understandable beyond the code.
+            </p>
+          </div>
+        </section>
       </section>
 
       <section class="card" style="margin-top:1.1rem;">
@@ -143,48 +152,7 @@
         </section>
       </section>
 
-      <section class="grid-2" style="margin-top:1.1rem;">
-        <div class="card">
-          <div class="eyebrow">Links</div>
-          <div class="card-title">Online</div>
-          <div class="chips">
-            <span class="chip"><a href="https://github.com/AlexProspal">GitHub</a></span>
-            <span class="chip"><a href="/Resume.pdf">Resume PDF</a></span>
-          </div>
-          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
-            If you’re reaching out about a role, sharing a job description is helpful so I can point to the most relevant work.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="eyebrow">Note</div>
-          <div class="card-title">Quick context</div>
-          <p class="muted" style="margin:0;">
-            Best way to reach me is email. I’m happy to share more details or links to specific work.
-          </p>
-          <hr class="sep" />
-          <div class="hero-actions">
-            <a class="btn" href="mailto:alexander@prospal.dev">Email</a>
-            <button class="btn" id="copyEmailBtn2" type="button">Copy email</button>
-          </div>
-        </div>
-      </section>
-
-      <script>
-        // Optional: make the 2nd copy button work if present
-        (function(){
-          var btn2 = document.getElementById("copyEmailBtn2");
-          if (!btn2) return;
-          btn2.addEventListener("click", function(){
-            var email = "alexander@prospal.dev";
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-              navigator.clipboard.writeText(email);
-              btn2.textContent = "Copied!";
-              setTimeout(function(){ btn2.textContent = "Copy email"; }, 1400);
-            }
-          });
-        })();
-      </script>
+      <!-- Removed bottom grid-2 section entirely -->
     </div>
   </main>
 </body>
