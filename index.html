@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Alexander Prospal</title>
+  <title>Overview • Alexander Prospal</title>
   <link rel="icon" type="image/x-icon" href="/Jerome.jpeg">
 
   <link rel="stylesheet" href="/styles.css" />
@@ -22,7 +22,7 @@
       </div>
 
       <nav class="nav" aria-label="Primary navigation">
-        <a href="/" class="active" aria-current="page">Overview</a>
+        <a href="/">Overview</a>
         <a href="/projects/">Projects</a>
         <a href="/skills/">Skills</a>
         <a href="/experience/">Experience</a>
@@ -33,131 +33,195 @@
 
   <main>
     <div class="container">
+      <!-- HERO -->
       <section class="page-hero">
+        <!-- KEEP: your overview card -->
         <div class="hero-card">
           <div class="eyebrow">Overview</div>
           <h1>Alexander Prospal</h1>
           <p class="subtitle">
             CWRU student pursuing a B.S. in Computer Science and a B.A. in Economics (Quantitative Methods),
-            with an Artificial Intelligence minor. Interested in machine learning, databases, and building
-            clean, reliable software.
+            with an Artificial Intelligence minor. Interested in databases, security, and building clean,
+            reliable software.
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="/Resume.pdf">Resume</a>
-            <a class="btn btn-primary" href="https://github.com/AlexProspal">GitHub</a>
+            <a class="btn" href="/projects/">Projects</a>
+            <a class="btn" href="/skills/">Skills</a>
+            <a class="btn" href="/Resume.pdf">Resume</a>
+            <a class="btn" href="https://github.com/AlexProspal">GitHub</a>
           </div>
         </div>
 
+        <!-- RIGHT HERO: Option 1 -->
         <div class="hero-card">
-          <div class="eyebrow">Quick Stats</div>
-          <div class="card-title">At A Glance</div>
-          <div class="chips">
-            <span class="chip">CWRU • Cleveland, OH</span>
-            <span class="chip">Python • SQL • Java • R</span>
-          </div>
-          <hr class="sep" />
-          <p class="muted" style="margin:0;">
-            Coursework: Machine Learning, Algorithms, Database Systems, Statistics, Linear Algebra.
+          <div class="eyebrow">Quick proof</div>
+          <div class="card-title">One line</div>
+          <p class="muted" style="margin:.35rem 0 0; line-height:1.55;">
+            I build backend-first systems with clear constraints: strong data models, practical security,
+            and readable implementations.
           </p>
+
+          <hr class="sep" />
+
+          <div class="card-title" style="margin-bottom:.25rem;">Proof of work</div>
+          <ul class="muted" style="margin:.35rem 0 0; padding-left:1.05rem; line-height:1.55;">
+            <li>
+              <a href="/projects/">Theater Inventory DB</a> — normalized schema, integrity constraints, complex queries, Python CLI.
+            </li>
+            <li>
+              <a href="/projects/">Password Manager</a> — secure data handling patterns and usable workflow.
+            </li>
+            <li>
+              <a href="/projects/">Data/Stats work</a> — analysis in R with reproducible writeups.
+            </li>
+          </ul>
+
+          <div class="hero-actions" style="margin-top:1rem;">
+            <a class="btn" href="/projects/">Browse projects</a>
+            <a class="btn" href="/contact/">Contact</a>
+          </div>
         </div>
       </section>
 
+      <!-- Option 7: Highlights dashboard -->
       <section class="grid-3">
         <div class="card">
-          <div class="eyebrow">About</div>
-          <div class="card-title">Student Developer</div>
-          <p class="muted">
-            I like taking messy real-world needs and turning them into structured systems.
-            Most recently, I built a relational database + Python CLI for managing theater inventory.
-          </p>
+          <div class="eyebrow">Dashboard</div>
+          <div class="card-title">Focus</div>
           <div class="chips">
-            <span class="chip">Detail-Oriented</span>
-            <span class="chip">Calm Under Pressure</span>
+            <span class="chip">Databases</span>
+            <span class="chip">Security</span>
+            <span class="chip">Backend</span>
+            <span class="chip">Data analysis</span>
           </div>
+          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+            I like building systems where correctness matters: data integrity, predictable behavior, and clear failure modes.
+          </p>
         </div>
 
         <div class="card">
-          <div class="eyebrow">Featured</div>
-          <div class="card-title">Theater Inventory Database System</div>
-          <p class="muted">
-            Designed a normalized SQL schema with integrity constraints, wrote complex multi-table queries,
-            and built a Python command-line interface using parameterized SQL.
-          </p>
+          <div class="eyebrow">Dashboard</div>
+          <div class="card-title">Toolbox</div>
           <div class="chips">
-            <span class="chip">SQL</span>
             <span class="chip">Python</span>
-            <span class="chip">Relational Design</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Java</span>
+            <span class="chip">R</span>
+            <span class="chip">Linux</span>
+            <span class="chip">Git</span>
           </div>
-          <div style="margin-top:.9rem;">
-            <a class="btn btn-primary" href="/projects/">See Details</a>
-          </div>
+          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+            Stronger in backend + data modeling than UI-heavy work (but I keep interfaces clean and usable).
+          </p>
         </div>
 
         <div class="card">
-          <div class="eyebrow">Contact</div>
-          <div class="card-title">Let’s Connect</div>
-          <p class="muted" style="margin-bottom:.65rem;">
-            <span style="display:block;">Cleveland, OH</span>
-            <span style="display:block;">alexander@prospal.dev</span>
-            <span style="display:block;">(216) 339–1306</span>
+          <div class="eyebrow">Dashboard</div>
+          <div class="card-title">How I work</div>
+          <div class="chips">
+            <span class="chip">Define constraints</span>
+            <span class="chip">Model data</span>
+            <span class="chip">Implement</span>
+            <span class="chip">Test</span>
+            <span class="chip">Document</span>
+          </div>
+          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+            I prefer simple designs that are easy to verify, extend, and explain.
           </p>
-          <a class="btn btn-primary" href="mailto:alexander@prospal.dev">Email Me</a>
         </div>
       </section>
 
+      <!-- Option 4: Project tiles -->
       <section class="card" style="margin-top:1.1rem;">
-        <div class="eyebrow">Highlights</div>
-        <div class="card-title">Resume Snapshot</div>
-        <p class="muted" style="margin:0;">A few key items pulled directly from my resume.</p>
+        <div class="eyebrow">Projects</div>
+        <div class="card-title">Explore by theme</div>
+        <p class="muted" style="margin:0;">
+          A fast way to skim what I build. Each section links to details and writeups.
+        </p>
 
-        <div class="table" role="table" aria-label="Featured highlights">
-          <div class="thead" role="rowgroup">
-            <div class="tr" role="row">
-              <div class="th" role="columnheader">Item</div>
-              <div class="th" role="columnheader">Details</div>
-              <div class="th" role="columnheader">Status</div>
-              <div class="th" role="columnheader">Link</div>
+        <section class="grid-2" style="margin-top:1rem;">
+          <div class="card" style="box-shadow:none;">
+            <div class="eyebrow">Theme</div>
+            <div class="card-title">Databases & Data Modeling</div>
+            <p class="muted" style="margin:0;">
+              Normalization, constraints, joins, and query design — turning real requirements into a schema that holds up.
+            </p>
+            <div class="hero-actions" style="margin-top:1rem;">
+              <a class="btn" href="/projects/">See DB projects</a>
             </div>
           </div>
-          <div class="tbody" role="rowgroup">
-            <div class="tr" role="row">
-              <div class="td" role="cell">
-                <div style="font-weight:650;">Education</div>
-                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">
-                  Case Western Reserve University • BS Computer Science + BA Economics (Quant Methods)
-                </div>
-              </div>
-              <div class="td" role="cell"><span class="chip">Minor: AI</span> <span class="chip">Expected 2028</span></div>
-              <div class="td" role="cell"><span class="status-pill status-build">In progress</span></div>
-              <div class="td" role="cell"><a class="btn btn-primary" href="/Resume.pdf">Resume</a></div>
-            </div>
 
-            <div class="tr" role="row">
-              <div class="td" role="cell">
-                <div style="font-weight:650;">Project</div>
-                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">
-                  Theater Inventory Database System — relational schema + Python CLI + realistic SQL analytics
-                </div>
-              </div>
-              <div class="td" role="cell"><span class="chip">Python</span> <span class="chip">SQL</span></div>
-              <div class="td" role="cell"><span class="status-pill status-in">Completed</span></div>
-              <div class="td" role="cell"><a class="btn btn-primary" href="/projects/">Projects</a></div>
-            </div>
-
-            <div class="tr" role="row">
-              <div class="td" role="cell">
-                <div style="font-weight:650;">Skills</div>
-                <div class="muted" style="font-size:.88rem;margin-top:.15rem;">Programming + core CS + quantitative math background</div>
-              </div>
-              <div class="td" role="cell"><span class="chip">Java</span> <span class="chip">R</span> <span class="chip">Databases</span></div>
-              <div class="td" role="cell"><span class="status-pill status-in">Core</span></div>
-              <div class="td" role="cell"><a class="btn btn-primary" href="/skills/">Skills</a></div>
+          <div class="card" style="box-shadow:none;">
+            <div class="eyebrow">Theme</div>
+            <div class="card-title">Security & Cryptography</div>
+            <p class="muted" style="margin:0;">
+              Practical security decisions, safe storage patterns, and careful handling of sensitive data.
+            </p>
+            <div class="hero-actions" style="margin-top:1rem;">
+              <a class="btn" href="/projects/">See security work</a>
             </div>
           </div>
+
+          <div class="card" style="box-shadow:none;">
+            <div class="eyebrow">Theme</div>
+            <div class="card-title">Data / Stats</div>
+            <p class="muted" style="margin:0;">
+              Reproducible analysis in R/Python, clean summaries, and results that are easy to validate.
+            </p>
+            <div class="hero-actions" style="margin-top:1rem;">
+              <a class="btn" href="/projects/">See analyses</a>
+            </div>
+          </div>
+
+          <div class="card" style="box-shadow:none;">
+            <div class="eyebrow">Theme</div>
+            <div class="card-title">Systems & Coursework Builds</div>
+            <p class="muted" style="margin:0;">
+              Projects where constraints are tight: performance, correctness, or toolchain-specific requirements.
+            </p>
+            <div class="hero-actions" style="margin-top:1rem;">
+              <a class="btn" href="/projects/">See builds</a>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Option 9: Timeline strip -->
+      <section class="card" style="margin-top:1.1rem;">
+        <div class="eyebrow">Timeline</div>
+        <div class="card-title">Where I’m coming from</div>
+        <p class="muted" style="margin:0;">
+          A quick snapshot of my path and what I’m leaning into right now.
+        </p>
+
+        <div class="chips" style="margin-top:1rem;">
+          <span class="chip">CWRU • CS + Econ</span>
+          <span class="chip">AI Minor</span>
+          <span class="chip">Coursework: databases + security</span>
+          <span class="chip">Now: building portfolio projects</span>
+          <span class="chip">Next: internships / research</span>
+        </div>
+
+        <div class="hero-actions" style="margin-top:1rem;">
+          <a class="btn" href="/experience/">See experience</a>
+          <a class="btn" href="/skills/">See skills</a>
         </div>
       </section>
+
+      <footer>
+        <div style="margin-top:1.4rem;">
+          © <span id="year"></span> Alexander Prospal
+        </div>
+      </footer>
     </div>
   </main>
+
+  <script>
+    (function(){
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
 </body>
 </html>
