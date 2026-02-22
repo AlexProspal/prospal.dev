@@ -26,7 +26,8 @@
         <a href="/projects/">Projects</a>
         <a href="/skills/">Skills</a>
         <a href="/experience/">Experience</a>
-        <a href="/contact/">Contact</a>
+        <!-- Contact is now on the overview page -->
+        <a href="/#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -35,7 +36,7 @@
     <div class="container">
       <!-- HERO -->
       <section class="page-hero">
-        <!-- KEEP: your overview card -->
+        <!-- Keep your existing overview card -->
         <div class="hero-card">
           <div class="eyebrow">Overview</div>
           <h1>Alexander Prospal</h1>
@@ -53,38 +54,31 @@
           </div>
         </div>
 
-        <!-- RIGHT HERO: Option 1 -->
-        <div class="hero-card">
-          <div class="eyebrow">Quick proof</div>
-          <div class="card-title">One line</div>
+        <!-- Replace "Quick proof" with Contact details -->
+        <div class="hero-card" id="contact">
+          <div class="eyebrow">Contact</div>
+          <div class="card-title">Get in touch</div>
           <p class="muted" style="margin:.35rem 0 0; line-height:1.55;">
-            I build backend-first systems with clear constraints: strong data models, practical security,
-            and readable implementations.
+            <span style="display:block;">Cleveland, OH</span>
+            <span style="display:block;">(216) 339-1306</span>
+            <span style="display:block;">Website: prospal.dev</span>
+            <span style="display:block;">Email: alexander@prospal.dev</span>
           </p>
 
-          <hr class="sep" />
-
-          <div class="card-title" style="margin-bottom:.25rem;">Proof of work</div>
-          <ul class="muted" style="margin:.35rem 0 0; padding-left:1.05rem; line-height:1.55;">
-            <li>
-              <a href="/projects/">Theater Inventory DB</a> — normalized schema, integrity constraints, complex queries, Python CLI.
-            </li>
-            <li>
-              <a href="/projects/">Password Manager</a> — secure data handling patterns and usable workflow.
-            </li>
-            <li>
-              <a href="/projects/">Data/Stats work</a> — analysis in R with reproducible writeups.
-            </li>
-          </ul>
-
           <div class="hero-actions" style="margin-top:1rem;">
-            <a class="btn" href="/projects/">Browse projects</a>
-            <a class="btn" href="/contact/">Contact</a>
+            <a class="btn" href="mailto:alexander@prospal.dev">Email me</a>
+            <button class="btn" id="copyEmailBtn" type="button">Copy email</button>
+            <a class="btn" href="/Resume.pdf">Resume</a>
+          </div>
+
+          <div class="chips" style="margin-top:1rem;">
+            <span class="chip"><a href="https://github.com/AlexProspal">GitHub</a></span>
           </div>
         </div>
       </section>
 
-      <!-- Option 7: Highlights dashboard -->
+      <!-- Keep the rest of your overview content (edit/remove anything you dislike later) -->
+
       <section class="grid-3">
         <div class="card">
           <div class="eyebrow">Dashboard</div>
@@ -132,12 +126,11 @@
         </div>
       </section>
 
-      <!-- Option 4: Project tiles -->
       <section class="card" style="margin-top:1.1rem;">
         <div class="eyebrow">Projects</div>
         <div class="card-title">Explore by theme</div>
         <p class="muted" style="margin:0;">
-          A fast way to skim what I build. Each section links to details and writeups.
+          A fast way to skim what I build.
         </p>
 
         <section class="grid-2" style="margin-top:1rem;">
@@ -145,10 +138,10 @@
             <div class="eyebrow">Theme</div>
             <div class="card-title">Databases & Data Modeling</div>
             <p class="muted" style="margin:0;">
-              Normalization, constraints, joins, and query design — turning real requirements into a schema that holds up.
+              Normalization, constraints, joins, and query design — turning requirements into a schema that holds up.
             </p>
             <div class="hero-actions" style="margin-top:1rem;">
-              <a class="btn" href="/projects/">See DB projects</a>
+              <a class="btn" href="/projects/">See projects</a>
             </div>
           </div>
 
@@ -159,7 +152,7 @@
               Practical security decisions, safe storage patterns, and careful handling of sensitive data.
             </p>
             <div class="hero-actions" style="margin-top:1rem;">
-              <a class="btn" href="/projects/">See security work</a>
+              <a class="btn" href="/projects/">See projects</a>
             </div>
           </div>
 
@@ -167,10 +160,10 @@
             <div class="eyebrow">Theme</div>
             <div class="card-title">Data / Stats</div>
             <p class="muted" style="margin:0;">
-              Reproducible analysis in R/Python, clean summaries, and results that are easy to validate.
+              Reproducible analysis in R/Python, clear summaries, results that are easy to validate.
             </p>
             <div class="hero-actions" style="margin-top:1rem;">
-              <a class="btn" href="/projects/">See analyses</a>
+              <a class="btn" href="/projects/">See projects</a>
             </div>
           </div>
 
@@ -181,47 +174,56 @@
               Projects where constraints are tight: performance, correctness, or toolchain-specific requirements.
             </p>
             <div class="hero-actions" style="margin-top:1rem;">
-              <a class="btn" href="/projects/">See builds</a>
+              <a class="btn" href="/projects/">See projects</a>
             </div>
           </div>
         </section>
       </section>
 
-      <!-- Option 9: Timeline strip -->
-      <section class="card" style="margin-top:1.1rem;">
-        <div class="eyebrow">Timeline</div>
-        <div class="card-title">Where I’m coming from</div>
-        <p class="muted" style="margin:0;">
-          A quick snapshot of my path and what I’m leaning into right now.
-        </p>
-
-        <div class="chips" style="margin-top:1rem;">
-          <span class="chip">CWRU • CS + Econ</span>
-          <span class="chip">AI Minor</span>
-          <span class="chip">Coursework: databases + security</span>
-          <span class="chip">Now: building portfolio projects</span>
-          <span class="chip">Next: internships / research</span>
+      <!-- Extra contact details like the old contact page (optional but nice) -->
+      <section class="grid-2" style="margin-top:1.1rem;">
+        <div class="card">
+          <div class="eyebrow">Links</div>
+          <div class="card-title">Online</div>
+          <div class="chips">
+            <span class="chip"><a href="https://github.com/AlexProspal">GitHub</a></span>
+            <span class="chip"><a href="/Resume.pdf">Resume PDF</a></span>
+          </div>
+          <p class="muted" style="margin-top:.85rem; margin-bottom:0;">
+            If you’re reaching out about a role, sharing a job description is helpful so I can point to the most relevant work.
+          </p>
         </div>
 
-        <div class="hero-actions" style="margin-top:1rem;">
-          <a class="btn" href="/experience/">See experience</a>
-          <a class="btn" href="/skills/">See skills</a>
+        <div class="card">
+          <div class="eyebrow">Note</div>
+          <div class="card-title">Quick context</div>
+          <p class="muted" style="margin:0;">
+            Best way to reach me is email. I’m happy to share more details or links to specific work.
+          </p>
+          <hr class="sep" />
+          <div class="hero-actions">
+            <a class="btn" href="mailto:alexander@prospal.dev">Email</a>
+            <button class="btn" id="copyEmailBtn2" type="button">Copy email</button>
+          </div>
         </div>
       </section>
 
-      <footer>
-        <div style="margin-top:1.4rem;">
-          © <span id="year"></span> Alexander Prospal
-        </div>
-      </footer>
+      <script>
+        // Optional: make the 2nd copy button work if present
+        (function(){
+          var btn2 = document.getElementById("copyEmailBtn2");
+          if (!btn2) return;
+          btn2.addEventListener("click", function(){
+            var email = "alexander@prospal.dev";
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(email);
+              btn2.textContent = "Copied!";
+              setTimeout(function(){ btn2.textContent = "Copy email"; }, 1400);
+            }
+          });
+        })();
+      </script>
     </div>
   </main>
-
-  <script>
-    (function(){
-      var y = document.getElementById('year');
-      if (y) y.textContent = String(new Date().getFullYear());
-    })();
-  </script>
 </body>
 </html>
