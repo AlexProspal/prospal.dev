@@ -103,8 +103,25 @@
     });
   }
 
+  function randomizeHeroCardGlow() {
+  var cards = document.querySelectorAll(".hero-card");
+  if (!cards || !cards.length) return;
+
+  for (var i = 0; i < cards.length; i++) {
+    var c = cards[i];
+
+    // Keep the glow away from extreme edges so it stays visible/nice.
+    var x = 15 + Math.random() * 70; // 15%..85%
+    var y = 15 + Math.random() * 70; // 15%..85%
+
+    c.style.setProperty("--glow-x", x.toFixed(2) + "%");
+    c.style.setProperty("--glow-y", y.toFixed(2) + "%");
+  }
+}
+
   document.addEventListener("DOMContentLoaded", function () {
     setActiveNav();
     wireCopyEmailButton();
+    randomizeHeroCardGlow();
   });
 })();
