@@ -424,3 +424,37 @@ footer{
   .grid-2{ grid-template-columns:1fr; }
   .brand, .top-actions{ min-width:auto; }
 }
+
+@media (max-width: 700px){
+  .topbar-inner{
+    flex-direction: column;
+    align-items: stretch;
+    gap: .65rem;
+    padding: .75rem 0;
+  }
+
+  .brand{
+    justify-content: center;
+  }
+
+  .top-actions{
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav{
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: .25rem;
+    gap: .4rem;
+  }
+
+  .nav a{
+    flex: 0 0 auto; /* prevents squeezing */
+  }
+
+  /* optional: hide scrollbar but keep scroll */
+  .nav::-webkit-scrollbar{ height: 0; }
+}
