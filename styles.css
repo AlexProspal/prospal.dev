@@ -366,3 +366,31 @@ footer{
   .grid-2{ grid-template-columns:1fr; }
   .brand, .top-actions{ min-width:auto; }
 }
+
+/* --- Bottom orange aura glow --- */
+body{
+  position: relative; /* ensures stacking context is predictable */
+}
+
+body::before{
+  content:"";
+  position: fixed;
+  left: 50%;
+  bottom: -28vh;              /* push down so it feels like it rises from below */
+  transform: translateX(-50%);
+  width: 120vw;
+  height: 90vh;
+
+  /* radial orange glow from bottom center */
+  background: radial-gradient(
+    ellipse at bottom center,
+    rgba(255,159,28,0.22) 0%,
+    rgba(255,179,71,0.14) 28%,
+    rgba(255,159,28,0.06) 52%,
+    rgba(5,8,20,0.00) 72%
+  );
+
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: -1;                /* keep behind all content */
+}
