@@ -443,7 +443,7 @@ footer{
   }
 
   .nav{
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -452,9 +452,8 @@ footer{
   }
 
   .nav a{
-    flex: 0 0 auto; /* prevents squeezing */
+    flex: 0 0 auto;
   }
 
-  /* optional: hide scrollbar but keep scroll */
   .nav::-webkit-scrollbar{ height: 0; }
 }
