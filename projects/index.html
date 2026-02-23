@@ -55,10 +55,9 @@
 
           <div class="chips">
             <span class="chip">AI / ML</span>
-            <span class="chip">Data pipelines</span>
-            <span class="chip">Evaluation mindset</span>
-            <span class="chip">Security fundamentals</span>
-            <span class="chip">Relational systems</span>
+            <span class="chip">Data Pipelines</span>
+            <span class="chip">Security Fundamentals</span>
+            <span class="chip">Relational Systems</span>
           </div>
 
           <hr class="sep" />
@@ -66,111 +65,106 @@
             I like projects where correctness matters: strong data modeling, safe handling of sensitive data,
             and designs that are easy to test and extend.
           </p>
-          <p class="muted" style="margin:.55rem 0 0;">
-            Tools: Python, Java, PostgreSQL/SQL, HTML/CSS/JS.
-          </p>
         </div>
       </section>
 
-      <!-- ========= Core projects (resume-highlighted) ========= -->
       <section class="card" style="margin-top:1.1rem;">
-        <div class="eyebrow">Core projects</div>
-        <div class="card-title">Complete systems (security, databases, web)</div>
+        <div class="eyebrow">Core Projects</div>
+        <div class="card-title">Complete Systems</div>
         <p class="muted" style="margin:0;">
           These are the projects I’ve taken end-to-end (architecture → implementation → real deliverable).
         </p>
+
+        <section class="grid-2" style="margin-top:1.1rem;">
+          <article class="card">
+            <div class="eyebrow">CSDS 344 • Computer Security</div>
+            <div class="card-title">Secure Password Manager Application</div>
+            <p class="muted" style="margin-top:.25rem;">
+              A Java password manager with encrypted, file-based persistence and a JavaFX GUI built around an MVC design.
+            </p>
+
+            <div class="chips">
+              <span class="chip">Java</span>
+              <span class="chip">JavaFX</span>
+              <span class="chip">MVC</span>
+              <span class="chip">Encryption</span>
+              <span class="chip">Input validation</span>
+            </div>
+
+            <hr class="sep" />
+            <ul class="muted" style="margin:0; padding-left:1.1rem; line-height:1.55;">
+              <li>Designed and implemented a secure password management system in Java to store, retrieve, and manage user credentials through a structured MVC architecture</li>
+              <li>Developed a data model to encapsulate password objects with controlled access, validation logic, and persistent storage handling</li>
+              <li>Implemented file-based data persistence to securely load and save encrypted credential data across sessions</li>
+              <li>Built a JavaFX-based graphical user interface with multiple controllers to handle user authentication, password listing, and CRUD operations</li>
+              <li>Enforced input validation and separation of concerns between application logic, data model, and UI controllers to ensure maintainability and security</li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:1rem;">
+              <a class="btn" href="https://github.com/AlexProspal/secure_password_manager">See this</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="eyebrow">CSDS 341 • Intro to Database Systems</div>
+            <div class="card-title">Theater Inventory Database System</div>
+            <p class="muted" style="margin-top:.25rem;">
+              A fully normalized PostgreSQL database with advanced SQL analytics and a Python CLI application layer.
+            </p>
+
+            <div class="chips">
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">SQL</span>
+              <span class="chip">Python</span>
+              <span class="chip">3NF design</span>
+              <span class="chip">Constraints</span>
+            </div>
+
+            <hr class="sep" />
+            <ul class="muted" style="margin:0; padding-left:1.1rem; line-height:1.55;">
+              <li>Designed and implemented a fully normalized relational database in PostgreSQL to manage costumes, props, performers, and show assignments for a theater organization</li>
+              <li>Defined primary keys, foreign keys, composite keys, and referential integrity constraints to enforce data consistency and eliminate redundancy (3NF schema design)</li>
+              <li>Wrote advanced SQL queries including multi-table joins, grouping and aggregation, nested subqueries, and constraint-based filters to answer operational and reporting questions</li>
+              <li>Developed a Python application layer with a command-line interface to connect to the database, execute parameterized queries, and safely process user input</li>
+              <li>Implemented realistic business logic such as inventory tracking, availability checks, and summary statistics through structured query design and controlled transaction handling</li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:1rem;">
+              <a class="btn" href="https://github.com/AlexProspal/theater_storage_system">See this</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="eyebrow">Personal • Ongoing</div>
+            <div class="card-title">Personal Portfolio Website (prospal.dev)</div>
+            <p class="muted" style="margin-top:.25rem;">
+              A responsive site to present projects and qualifications with a consistent layout and small UX touches.
+            </p>
+
+            <div class="chips">
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Responsive UI</span>
+              <span class="chip">Accessibility</span>
+            </div>
+
+            <hr class="sep" />
+            <ul class="muted" style="margin:0; padding-left:1.1rem; line-height:1.55;">
+              <li>Designed and developed a responsive personal website to showcase academic projects, technical skills, and professional experience</li>
+              <li>Implemented a modular front-end structure using HTML, CSS, and JavaScript with a unified component-based layout</li>
+              <li>Focused on clean UI/UX design, accessibility, and cross-browser compatibility across Safari, Chrome, and Firefox</li>
+              <li>Deployed and maintained the site using Git-based version control and GitHub Pages hosting</li>
+              <li>Continuously iterate on design, performance optimization, and content structure to reflect current technical work</li>
+            </ul>
+
+            <div class="hero-actions" style="margin-top:1rem;">
+              <a class="btn" href="https://github.com/AlexProspal/prospal.dev">See this</a>
+            </div>
+          </article>
+        </section>
       </section>
 
-      <section class="grid-2" style="margin-top:1.1rem;">
-        <article class="card">
-          <div class="eyebrow">CSDS 344 • Computer Security</div>
-          <div class="card-title">Secure Password Manager Application</div>
-          <p class="muted" style="margin-top:.25rem;">
-            A Java password manager with encrypted, file-based persistence and a JavaFX GUI built around an MVC design.
-          </p>
-
-          <div class="chips">
-            <span class="chip">Java</span>
-            <span class="chip">JavaFX</span>
-            <span class="chip">MVC</span>
-            <span class="chip">Encryption</span>
-            <span class="chip">Input validation</span>
-          </div>
-
-          <hr class="sep" />
-          <ul class="muted" style="margin:0; padding-left:1.1rem; line-height:1.55;">
-            <li>Designed and implemented a secure password management system in Java to store, retrieve, and manage user credentials through a structured MVC architecture</li>
-            <li>Developed a data model to encapsulate password objects with controlled access, validation logic, and persistent storage handling</li>
-            <li>Implemented file-based data persistence to securely load and save encrypted credential data across sessions</li>
-            <li>Built a JavaFX-based graphical user interface with multiple controllers to handle user authentication, password listing, and CRUD operations</li>
-            <li>Enforced input validation and separation of concerns between application logic, data model, and UI controllers to ensure maintainability and security</li>
-          </ul>
-
-          <div class="hero-actions" style="margin-top:1rem;">
-            <a class="btn" href="https://github.com/AlexProspal/secure_password_manager">See this</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="eyebrow">CSDS 341 • Intro to Database Systems</div>
-          <div class="card-title">Theater Inventory Database System</div>
-          <p class="muted" style="margin-top:.25rem;">
-            A fully normalized PostgreSQL database with advanced SQL analytics and a Python CLI application layer.
-          </p>
-
-          <div class="chips">
-            <span class="chip">PostgreSQL</span>
-            <span class="chip">SQL</span>
-            <span class="chip">Python</span>
-            <span class="chip">3NF design</span>
-            <span class="chip">Constraints</span>
-          </div>
-
-          <hr class="sep" />
-          <ul class="muted" style="margin:0; padding-left:1.1rem; line-height:1.55;">
-            <li>Designed and implemented a fully normalized relational database in PostgreSQL to manage costumes, props, performers, and show assignments for a theater organization</li>
-            <li>Defined primary keys, foreign keys, composite keys, and referential integrity constraints to enforce data consistency and eliminate redundancy (3NF schema design)</li>
-            <li>Wrote advanced SQL queries including multi-table joins, grouping and aggregation, nested subqueries, and constraint-based filters to answer operational and reporting questions</li>
-            <li>Developed a Python application layer with a command-line interface to connect to the database, execute parameterized queries, and safely process user input</li>
-            <li>Implemented realistic business logic such as inventory tracking, availability checks, and summary statistics through structured query design and controlled transaction handling</li>
-          </ul>
-
-          <div class="hero-actions" style="margin-top:1rem;">
-            <a class="btn" href="https://github.com/AlexProspal/theater_storage_system">See this</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="eyebrow">Personal • Ongoing</div>
-          <div class="card-title">Personal Portfolio Website (prospal.dev)</div>
-          <p class="muted" style="margin-top:.25rem;">
-            A responsive site to present projects and qualifications with a consistent layout and small UX touches.
-          </p>
-
-          <div class="chips">
-            <span class="chip">HTML</span>
-            <span class="chip">CSS</span>
-            <span class="chip">JavaScript</span>
-            <span class="chip">Responsive UI</span>
-            <span class="chip">Accessibility</span>
-          </div>
-
-          <hr class="sep" />
-          <ul class="muted" style="margin:0; padding-left:1.1rem; line-height:1.55;">
-            <li>Designed and developed a responsive personal website to showcase academic projects, technical skills, and professional experience</li>
-            <li>Implemented a modular front-end structure using HTML, CSS, and JavaScript with a unified component-based layout</li>
-            <li>Focused on clean UI/UX design, accessibility, and cross-browser compatibility across Safari, Chrome, and Firefox</li>
-            <li>Deployed and maintained the site using Git-based version control and GitHub Pages hosting</li>
-            <li>Continuously iterate on design, performance optimization, and content structure to reflect current technical work</li>
-          </ul>
-
-          <div class="hero-actions" style="margin-top:1rem;">
-            <a class="btn" href="https://github.com/AlexProspal/prospal.dev">See this</a>
-          </div>
-        </article>
-      </section>
-
-      <!-- ========= Forward direction ========= -->
       <section class="card" style="margin-top:1.1rem;">
         <div class="eyebrow">Next</div>
         <div class="card-title">Where this is going</div>
