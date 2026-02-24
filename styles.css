@@ -1,9 +1,10 @@
 :root{
   --bg:#0b1020;
 
-  /* background effect tuning (blue only, centered at top) */
+  /* background effect tuning */
   --bg-vignette: rgba(0,0,0,0.55);
-  --bg-blob1: rgba(46,196,182,0.12);   /* blue/teal glow */
+  --bg-aura: rgba(46,196,182,0.12);      /* blue/teal */
+  --bg-aura-core: rgba(46,196,182,0.18); /* brighter center line */
   --bg-noise-opacity: 0.22;
 
   --card-bg:#131933;
@@ -21,8 +22,8 @@
 *{ box-sizing:border-box; }
 
 /* =========================================================
-   Background (blue-only, radiates from top center) + tiny noise
-   Keeps overscroll/rubber-band from showing a different color
+   Background: vertical “aura column” from page center (not radial)
+   + vignette + tiny noise + no overscroll color change
    ========================================================= */
 html{
   background: var(--bg);
@@ -30,7 +31,7 @@ html{
   position: relative;
 }
 
-/* Blue glow from the top-center */
+/* Vertical aura column centered on the page */
 html::before{
   content:"";
   position: fixed;
@@ -39,14 +40,25 @@ html::before{
   pointer-events: none;
 
   background:
-    /* main glow: top center */
-    radial-gradient(1100px 650px at 50% 0%,
-      var(--bg-blob1),
-      transparent 62%),
+    /* soft vertical column glow (widens outward, but not radial) */
+    linear-gradient(90deg,
+      transparent 0%,
+      transparent 28%,
+      color-mix(in srgb, var(--bg-aura) 55%, transparent) 45%,
+      var(--bg-aura-core) 50%,
+      color-mix(in srgb, var(--bg-aura) 55%, transparent) 55%,
+      transparent 72%,
+      transparent 100%),
 
-    /* gentle vignette to keep edges darker and focus content */
-    radial-gradient(1200px 900px at 50% 30%,
+    /* subtle vertical falloff so it feels “aura-like” */
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--bg-aura) 20%, transparent) 0%,
       transparent 55%,
+      color-mix(in srgb, var(--bg-aura) 10%, transparent) 100%),
+
+    /* vignette to keep edges darker and focus content */
+    radial-gradient(1200px 900px at 50% 45%,
+      transparent 52%,
       var(--bg-vignette) 100%);
 }
 
