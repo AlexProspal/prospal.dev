@@ -1,8 +1,10 @@
 :root{
   --bg:#0b1020;
+
+  /* background effect tuning (blue only, centered at top) */
   --bg-vignette: rgba(0,0,0,0.55);
-  --bg-blob1: rgba(46,196,182,0.10);
-  --bg-blob2: rgba(255,159,28,0.08);
+  --bg-blob1: rgba(46,196,182,0.12);   /* blue/teal glow */
+  --bg-noise-opacity: 0.22;
 
   --card-bg:#131933;
   --accent:#ffb347;
@@ -19,8 +21,8 @@
 *{ box-sizing:border-box; }
 
 /* =========================================================
-   Background (Option A + tiny noise) + fixes overscroll color
-   Put the layered background on html so it never “falls behind”
+   Background (blue-only, radiates from top center) + tiny noise
+   Keeps overscroll/rubber-band from showing a different color
    ========================================================= */
 html{
   background: var(--bg);
@@ -28,7 +30,7 @@ html{
   position: relative;
 }
 
-/* Subtle, non-distracting colorful background (overlay) */
+/* Blue glow from the top-center */
 html::before{
   content:"";
   position: fixed;
@@ -37,9 +39,15 @@ html::before{
   pointer-events: none;
 
   background:
-    radial-gradient(900px 520px at 15% 12%, var(--bg-blob1), transparent 60%),
-    radial-gradient(900px 520px at 85% 20%, var(--bg-blob2), transparent 62%),
-    radial-gradient(1200px 900px at 50% 30%, transparent 55%, var(--bg-vignette) 100%);
+    /* main glow: top center */
+    radial-gradient(1100px 650px at 50% 0%,
+      var(--bg-blob1),
+      transparent 62%),
+
+    /* gentle vignette to keep edges darker and focus content */
+    radial-gradient(1200px 900px at 50% 30%,
+      transparent 55%,
+      var(--bg-vignette) 100%);
 }
 
 /* Tiny noise texture for depth */
@@ -63,7 +71,7 @@ html::after{
       transparent 4px);
 
   mix-blend-mode: overlay;
-  opacity: 0.22;
+  opacity: var(--bg-noise-opacity);
 }
 
 /* Optional: reduce/stop “scroll past” bounce in supporting browsers */
