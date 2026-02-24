@@ -1,12 +1,9 @@
 :root{
   --bg:#0b1020;
-
-  /* background effect tuning (softer center, no harsh “line”) */
   --bg-vignette: rgba(0,0,0,0.55);
-  --bg-aura: rgba(46,196,182,0.10);       /* overall teal glow */
-  --bg-aura-core: rgba(46,196,182,0.06);  /* MUCH softer center */
+  --bg-aura: rgba(46,196,182,0.10);
+  --bg-aura-core: rgba(46,196,182,0.06);
   --bg-noise-opacity: 0.22;
-
   --card-bg:#131933;
   --accent:#ffb347;
   --accent-soft:rgba(255,179,71,0.14);
@@ -15,23 +12,17 @@
   --muted:#a0a4c0;
   --border:#262b45;
   --danger:#ff4b5c;
-
   --max:1200px;
 }
 
 *{ box-sizing:border-box; }
 
-/* =========================================================
-   Background: soft vertical aura column (no sharp center line)
-   + vignette + tiny noise + no overscroll color change
-   ========================================================= */
 html{
   background: var(--bg);
   min-height: 100%;
   position: relative;
 }
 
-/* Vertical aura column centered on the page (soft core + wide shoulders) */
 html::before{
   content:"";
   position: fixed;
@@ -40,38 +31,31 @@ html::before{
   pointer-events: none;
 
   background:
-    /* Very soft center + broad glow (avoid looking like a line) */
     linear-gradient(90deg,
       transparent 0%,
       transparent 18%,
 
-      /* outer shoulders */
       color-mix(in srgb, var(--bg-aura) 35%, transparent) 40%,
       color-mix(in srgb, var(--bg-aura) 55%, transparent) 46%,
 
-      /* soft core (no hard edge at 50%) */
       var(--bg-aura-core) 50%,
 
-      /* mirror shoulders */
       color-mix(in srgb, var(--bg-aura) 55%, transparent) 54%,
       color-mix(in srgb, var(--bg-aura) 35%, transparent) 60%,
 
       transparent 82%,
       transparent 100%),
 
-    /* subtle vertical falloff */
     linear-gradient(180deg,
       color-mix(in srgb, var(--bg-aura) 16%, transparent) 0%,
       transparent 55%,
       color-mix(in srgb, var(--bg-aura) 10%, transparent) 100%),
 
-    /* vignette */
     radial-gradient(1200px 900px at 50% 45%,
       transparent 52%,
       var(--bg-vignette) 100%);
 }
 
-/* Tiny noise texture for depth */
 html::after{
   content:"";
   position: fixed;
@@ -106,8 +90,6 @@ body{
   background: transparent;
   color:var(--text);
 }
-
-/* ---------- rest of your styles unchanged ---------- */
 
 a{ color:var(--accent-strong); text-decoration:none; }
 a:hover{ text-decoration:underline; }
