@@ -1,10 +1,10 @@
 :root{
   --bg:#0b1020;
 
-  /* background effect tuning */
+  /* background effect tuning (softer center, no harsh “line”) */
   --bg-vignette: rgba(0,0,0,0.55);
-  --bg-aura: rgba(46,196,182,0.12);      /* blue/teal */
-  --bg-aura-core: rgba(46,196,182,0.18); /* brighter center line */
+  --bg-aura: rgba(46,196,182,0.10);       /* overall teal glow */
+  --bg-aura-core: rgba(46,196,182,0.06);  /* MUCH softer center */
   --bg-noise-opacity: 0.22;
 
   --card-bg:#131933;
@@ -22,7 +22,7 @@
 *{ box-sizing:border-box; }
 
 /* =========================================================
-   Background: vertical “aura column” from page center (not radial)
+   Background: soft vertical aura column (no sharp center line)
    + vignette + tiny noise + no overscroll color change
    ========================================================= */
 html{
@@ -31,7 +31,7 @@ html{
   position: relative;
 }
 
-/* Vertical aura column centered on the page */
+/* Vertical aura column centered on the page (soft core + wide shoulders) */
 html::before{
   content:"";
   position: fixed;
@@ -40,23 +40,32 @@ html::before{
   pointer-events: none;
 
   background:
-    /* soft vertical column glow (widens outward, but not radial) */
+    /* Very soft center + broad glow (avoid looking like a line) */
     linear-gradient(90deg,
       transparent 0%,
-      transparent 28%,
-      color-mix(in srgb, var(--bg-aura) 55%, transparent) 45%,
+      transparent 18%,
+
+      /* outer shoulders */
+      color-mix(in srgb, var(--bg-aura) 35%, transparent) 40%,
+      color-mix(in srgb, var(--bg-aura) 55%, transparent) 46%,
+
+      /* soft core (no hard edge at 50%) */
       var(--bg-aura-core) 50%,
-      color-mix(in srgb, var(--bg-aura) 55%, transparent) 55%,
-      transparent 72%,
+
+      /* mirror shoulders */
+      color-mix(in srgb, var(--bg-aura) 55%, transparent) 54%,
+      color-mix(in srgb, var(--bg-aura) 35%, transparent) 60%,
+
+      transparent 82%,
       transparent 100%),
 
-    /* subtle vertical falloff so it feels “aura-like” */
+    /* subtle vertical falloff */
     linear-gradient(180deg,
-      color-mix(in srgb, var(--bg-aura) 20%, transparent) 0%,
+      color-mix(in srgb, var(--bg-aura) 16%, transparent) 0%,
       transparent 55%,
       color-mix(in srgb, var(--bg-aura) 10%, transparent) 100%),
 
-    /* vignette to keep edges darker and focus content */
+    /* vignette */
     radial-gradient(1200px 900px at 50% 45%,
       transparent 52%,
       var(--bg-vignette) 100%);
@@ -86,7 +95,6 @@ html::after{
   opacity: var(--bg-noise-opacity);
 }
 
-/* Optional: reduce/stop “scroll past” bounce in supporting browsers */
 @supports (overscroll-behavior: none){
   html, body{ overscroll-behavior: none; }
 }
@@ -98,6 +106,8 @@ body{
   background: transparent;
   color:var(--text);
 }
+
+/* ---------- rest of your styles unchanged ---------- */
 
 a{ color:var(--accent-strong); text-decoration:none; }
 a:hover{ text-decoration:underline; }
