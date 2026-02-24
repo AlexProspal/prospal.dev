@@ -3,6 +3,7 @@
   --bg-vignette: rgba(0,0,0,0.55);
   --bg-blob1: rgba(46,196,182,0.10);
   --bg-blob2: rgba(255,159,28,0.08);
+
   --card-bg:#131933;
   --accent:#ffb347;
   --accent-soft:rgba(255,179,71,0.14);
@@ -17,33 +18,18 @@
 
 *{ box-sizing:border-box; }
 
+/* =========================================================
+   Background (Option A + tiny noise) + fixes overscroll color
+   Put the layered background on html so it never “falls behind”
+   ========================================================= */
 html{
   background: var(--bg);
-  height: 100%;
-}
-
-body{
   min-height: 100%;
-  background: var(--bg);
+  position: relative;
 }
-
-@supports (overscroll-behavior: none){
-  html, body{
-    overscroll-behavior: none;
-  }
-}
-
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--bg);
-
-  color:var(--text);
-}
-
 
 /* Subtle, non-distracting colorful background (overlay) */
-body::before{
+html::before{
   content:"";
   position: fixed;
   inset: 0;
@@ -57,7 +43,7 @@ body::before{
 }
 
 /* Tiny noise texture for depth */
-body::after{
+html::after{
   content:"";
   position: fixed;
   inset: 0;
@@ -78,6 +64,19 @@ body::after{
 
   mix-blend-mode: overlay;
   opacity: 0.22;
+}
+
+/* Optional: reduce/stop “scroll past” bounce in supporting browsers */
+@supports (overscroll-behavior: none){
+  html, body{ overscroll-behavior: none; }
+}
+
+body{
+  margin:0;
+  min-height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: transparent;
+  color:var(--text);
 }
 
 a{ color:var(--accent-strong); text-decoration:none; }
