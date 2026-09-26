@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Local server / tooling artifacts
+__pycache__/
+*.py[cod]
