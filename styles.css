@@ -668,20 +668,20 @@ nav .nav-active {
 }
 
 .page-hero .eyebrow {
-    margin-bottom: 75px;
+    margin-bottom: 48px;
 }
 
 .page-hero h1 {
-    max-width: 1250px;
+    max-width: 1000px;
 
     margin: 0;
 
-    font-size: clamp(68px, 10vw, 160px);
+    font-size: clamp(48px, 6vw, 90px);
 
     font-weight: 750;
 
-    line-height: 0.78;
-    letter-spacing: -0.075em;
+    line-height: 0.88;
+    letter-spacing: -0.065em;
 
     text-transform: uppercase;
 }
@@ -690,12 +690,12 @@ nav .nav-active {
     color: transparent;
 
     -webkit-text-stroke:
-        clamp(1px, 0.12vw, 2px)
+        clamp(1px, 0.1vw, 2px)
         var(--accent);
 }
 
 .page-hero-bottom {
-    margin-top: 75px;
+    margin-top: 45px;
 
     display: flex;
     align-items: end;
@@ -1082,17 +1082,19 @@ nav .nav-active {
     }
 
     .page-hero .eyebrow {
-        margin-bottom: 50px;
+        margin-bottom: 36px;
     }
 
     .page-hero h1 {
-        font-size: clamp(58px, 20vw, 92px);
+        font-size: clamp(44px, 13vw, 68px);
+
+        line-height: 0.9;
     }
 
     .page-hero-bottom {
         display: block;
 
-        margin-top: 50px;
+        margin-top: 36px;
     }
 
 
